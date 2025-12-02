@@ -51,3 +51,23 @@ The Docling JSON output contains valuable structural information that can be lev
 - Preserves all extracted text and metadata
 - Can be implemented as a post-processing step on the JSON data
 - More computationally efficient than image division
+
+---
+
+# Tried Strategies - Failed or Rejected
+
+## 1. [Smoldocling](https://github.com/AIAnytime/SmolDocling-OCR-App)
+- Full of bugs and gives inconsistent results. Fails in understanding complex plans and structured documents.
+
+## 2. PaddleOCR Other Versions
+- Using PaddleOCR-VL instead, which gives better results
+
+---
+
+# Other Strategies to Try or Evaluate
+
+## 1. [pdf-extract-kit](https://github.com/opendatalab/PDF-Extract-Kit/tree/main)
+
+## 2. [Layout-parser](https://github.com/Layout-Parser/layout-parser)
+
+## 3. [Pdfplumber](https://github.com/jsvine/pdfplumber)

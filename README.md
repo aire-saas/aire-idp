@@ -44,7 +44,7 @@ Adjust `IMAGE_RESOLUTION_SCALE` in `pdf_processor.py` to control image quality (
 
 **Memory issues?** Reduce `IMAGE_RESOLUTION_SCALE` to 2.0 or lower
 
-**First run slow?** PaddleOCR models are downloading (~100MB) - this only happens once
+**OCR run is very slow around 5-10 min** 
 
 ## Resources
 
