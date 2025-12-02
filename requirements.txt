@@ -1,0 +1,10 @@
+# Core dependencies
+docling>=1.0.0
+docling-core>=1.0.0
+paddleocr>=2.7.0
+
+# Image processing
+Pillow>=10.0.0
+
+# Data handling
+numpy>=1.24.0
