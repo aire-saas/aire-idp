@@ -5,6 +5,13 @@ paddleocr>=2.7.0
 
 # Image processing
 Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# PDF handling
+PyMuPDF>=1.23.0
+
+# OCR
+pytesseract>=0.3.10
 
 # Data handling
 numpy>=1.24.0
