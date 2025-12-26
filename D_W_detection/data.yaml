@@ -1,0 +1,4 @@
+train: small_dataset_1024/images/train
+val: small_dataset_1024/images/train
+nc: 5
+names: ['door', 'window', 'stairs', "arc", "semi_arc"]
