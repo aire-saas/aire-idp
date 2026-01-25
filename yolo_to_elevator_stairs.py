@@ -20,9 +20,9 @@ The result is written as <out_base>_overlay.png."""
 
 """Run this code from the command line similar to this example:
     
-     python3 yolo_to_elev_stairs.py \
-  --model /Users/albouchiayoub/PycharmProjects/aire-idp/Documentation/Week10/stairs_elevator_yolov8s_640/weights/best.pt \
-  --image "/Users/albouchiayoub/PycharmProjects/aire-idp/Final/Model-trained-on-Augmented-German-DATASET/Inference-Exmaples/3/70675-ARC-50006-F-I-A-GR-EG-H05.png" \
+     python3 yolo_to_elevator_stairs.py \
+  --model /Users/albouchiayoub/aire-idp/Model-trained-on-detecting-Stairs-and-Elevators/weights/best.pt \
+  --image "/Users/albouchiayoub/aire-idp/Model_trained_on_German_DataSet/Infernce-Examples/3/70675-ARC-50013-F-H-A-GR-DG-H0102.png" \
   --device mps \
   --conf 0.10 \
   --tile 1024 \
