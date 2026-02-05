@@ -1,0 +1,87 @@
+# ======================================
+# Python
+# ======================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ======================================
+# VS Code
+# ======================================
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# ======================================
+# OS / Editor
+# ======================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ======================================
+# Logs & runtime
+# ======================================
+*.log
+*.out
+
+# ======================================
+# Jupyter
+# ======================================
+.ipynb_checkpoints/
+
+# ======================================
+# Image / CV debugging outputs
+# ======================================
+debug/
+output/
+outputs/
+results/
+tmp/
+temp/
+
+# Generated images
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.bmp
+
+# ======================================
+# Model / cache files (if added later)
+# ======================================
+*.h5
+*.pth
+*.pt
+*.onnx
+.cache/
+
+# ======================================
+# Test artifacts
+# ======================================
+.coverage
+.pytest_cache/
+
+# ======================================
+# Environment variables
+# ======================================
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
