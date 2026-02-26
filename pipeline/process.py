@@ -30,12 +30,13 @@ logger = logging.getLogger(__name__)
 # ------------------------
 class PageContent:
     def __init__(self, page_image: Image.Image,page_number: int, text: Any, images: List[Image.Image] | None = None, info_panel: Image.Image | None = None,
-        plan: Image.Image | None = None, offset: tuple | None = (0, 0), predicted_plan: Image.Image | None = None, rooms: Any  | None = None, openAIGrouping: Any | None = None):
+        split_x: int | None = 0, plan: Image.Image | None = None, offset: tuple | None = (0, 0), predicted_plan: Image.Image | None = None, rooms: Any  | None = None, openAIGrouping: Any | None = None):
         self.page_image = page_image
         self.page_number = page_number
         self.text = text
         self.images = images
         self.info_panel = info_panel
+        self.split_x = split_x
         self.plan = plan
         self.offset = offset
         self.predicted_plan = predicted_plan

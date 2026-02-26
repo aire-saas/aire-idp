@@ -1,0 +1,17 @@
+{
+  "pdf_path": "./uploads\\02aa2350-9e9b-45ba-9bef-0cbea235c31e_1.pdf",
+  "output_dir": "pipeline_output",
+  "pages_processed": 1,
+  "timestamp": "2026-02-26T04:13:34.292083",
+  "pages": [
+    {
+      "page_number": 1,
+      "has_text": true,
+      "has_plan": true,
+      "has_info_panel": true,
+      "has_predictions": true,
+      "rooms_count": 19,
+      "images_extracted": 1
+    }
+  ]
+}

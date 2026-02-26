@@ -33,7 +33,7 @@ def detect_rooms_from_image(image: Image.Image, detections: List[Dict]):
     return output, output_data
 
 
-def load_detections_from_detections(detections: List[Dict]) -> Tuple[List[Dict], List[Dict], List[Dict], List[Dict]]:
+def load_detections_from_detections(detections: List[Dict]) -> Tuple[List[Dict], List[Dict], List[Dict], List[Dict], List[Dict]]:
     """
     Extract doors, windows, stairs from detections list.
     
@@ -47,6 +47,7 @@ def load_detections_from_detections(detections: List[Dict]) -> Tuple[List[Dict],
     windows = []
     stairs = []
     aufzugs = []
+    walls = []
     #print("detections :", detections)
     print("detections length :", len(detections))
     print("detections 0", detections[0])
@@ -70,8 +71,10 @@ def load_detections_from_detections(detections: List[Dict]) -> Tuple[List[Dict],
             stairs.append(bbox)
         elif 'aufzug' in class_name or 'elevator' in class_name or 'lift' in class_name or source == 'aufzug':
             aufzugs.append(bbox)
+        elif class_name == 'wall' or source == 'wall':
+            walls.append(bbox)
     
-    return doors, windows, stairs, aufzugs
+    return doors, windows, stairs, aufzugs, walls
 
 
 def pixels_to_meters(pixels: float) -> float:
@@ -624,7 +627,7 @@ def detect_rooms(image: np.ndarray, json_data: Any = None, threshold_value: int 
     #print("1")
     if json_data is not None:
         if isinstance(json_data, list):
-            doors, windows, stairs, aufzugs = load_detections_from_detections(json_data)
+            doors, windows, stairs, aufzugs, walls  = load_detections_from_detections(json_data)
     
     # Convert to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -718,6 +721,7 @@ def detect_rooms(image: np.ndarray, json_data: Any = None, threshold_value: int 
     windows_per_room = [[] for _ in range(len(room_masks))]
     stairs_per_room = [[] for _ in range(len(room_masks))]
     aufzugs_per_room = [[] for _ in range(len(room_masks))]
+    walls_per_room = [[] for _ in range(len(room_masks))]
     
     if json_data is not None:
         if doors or windows:
@@ -738,6 +742,10 @@ def detect_rooms(image: np.ndarray, json_data: Any = None, threshold_value: int 
                     aufzugs_per_room[room_idx].append(aufzug)
                    # print("9c")
                     break
+        for wall in walls:
+            for room_idx, room_mask in enumerate(room_masks):
+                if is_opening_adjacent_to_room(wall, room_mask, margin=10):
+                    walls_per_room[room_idx].append(wall)
    #print("10")
     # Store room information for JSON
     rooms_info = []
@@ -783,13 +791,13 @@ def detect_rooms(image: np.ndarray, json_data: Any = None, threshold_value: int 
 
         doors_length = {
             i: pixels_to_meters(
-                max(bbox['xmax'] - bbox['xmin'], bbox['ymax'] - bbox['ymin'])
+                max(round(bbox['xmax'] - bbox['xmin'],2), round(bbox['ymax'] - bbox['ymin'], 2))
             )
             for i, bbox in enumerate(room_doors)
         }
         windows_length = {
             i: pixels_to_meters(
-                max(bbox['xmax'] - bbox['xmin'], bbox['ymax'] - bbox['ymin'])
+                max(round(bbox['xmax'] - bbox['xmin'],2), round(bbox['ymax'] - bbox['ymin'], 2))
             )
             for i, bbox in enumerate(room_windows)
         }
@@ -814,6 +822,7 @@ def detect_rooms(image: np.ndarray, json_data: Any = None, threshold_value: int 
                 "x": float(centroid[0]),
                 "y": float(centroid[1])
             },
+            "walls": extract_wall_info(walls_per_room[room_idx]),
             "doors_count": len(room_doors),
             "doors_lengths": doors_length,
             "windows_count": len(room_windows),
@@ -1007,6 +1016,32 @@ def save_rooms_json(output_data: Dict, output_path: str):
     }
     with open(output_path, 'w') as f:
         json.dump(data, f, indent=2)
+def extract_wall_info(walls_per_room):
+    
+    walls_out = {}
+
+    for i, bbox in enumerate(walls_per_room):
+        xmin = bbox['xmin']
+        ymin = bbox['ymin']
+        xmax = bbox['xmax']
+        ymax = bbox['ymax']
+
+        w = xmax - xmin
+        h = ymax - ymin
+
+        wall_thickness = h if w > h else w
+        wall_length = w if w > h else h
+
+        walls_out[i] = {
+            "wall_thickness": round(pixels_to_meters(wall_thickness), 2),
+            "wall_length": round(pixels_to_meters(wall_length), 2),
+            "xmin": round(xmin),
+            "ymin": round(ymin),
+            "xmax": round(xmax),
+            "ymax": round(ymax),
+        }
+
+    return walls_out
 
 
 def print_rooms_summary(output_data: Dict):

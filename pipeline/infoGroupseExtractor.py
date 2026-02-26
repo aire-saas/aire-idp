@@ -39,6 +39,7 @@ class InfoGroupExtractor:
         """
         # Try to get API key from parameter, environment variable, or use default
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        print("openAI key " + str(self.api_key))
         if not self.api_key:
             raise ValueError(
                 "OpenAI API key not provided. "

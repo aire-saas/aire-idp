@@ -143,7 +143,8 @@ def upload_file():
             "success": True,
             "pages": pages_data,
             "total_pages": len(pages_data),
-            "session_id": session_id
+            "session_id": session_id,
+            "rooms": pipeline.pages_content[0].rooms
         }
 
         return jsonify(pdfDatas[session_id])
@@ -174,6 +175,9 @@ def ask_question():
 
     answer = qa.ask(question)
     return jsonify({"success": True, "answer": answer})
+
+
+
 
 
 @app.route("/pdf/<session_id>/<filename>")

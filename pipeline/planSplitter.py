@@ -72,7 +72,7 @@ class PlanSplitter:
             page_image = pageContent.page_image
             split_x = self.find_split_point(pageContent = pageContent)
             pageContent.info_panel = page_image.crop((split_x, 0, page_image.width, page_image.height))
-            
+            pageContent.split_x = split_x
             #plan, x , y = self.crop_to_largest_connected_component(np.array(page_image.crop((0, 0, split_x, page_image.height))))
             x = 0
             y = 0

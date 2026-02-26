@@ -73,6 +73,37 @@
             background: #545b62;
         }
 
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background: #138496;
+        }
+
+        .btn-visualize {
+            background: #9c27b0;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn-visualize:hover {
+            background: #7b1fa2;
+        }
+
         .btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
@@ -166,6 +197,7 @@
             overflow-y: auto;
         }
 
+        /* Question and Answer Section */
         .input-group {
             display: flex;
             flex-direction: column;
@@ -205,7 +237,8 @@
             word-wrap: break-word;
             font-size: 14px;
             line-height: 1.6;
-            min-height: 200px;
+            min-height: 150px;
+            max-height: 200px;
         }
 
         .answer-output:empty::before {
@@ -213,11 +246,174 @@
             color: #999;
         }
 
+        /* Visualization Section - Now below answer box */
+        .visualization-section {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            margin-top: 5px;
+        }
+
+        .visualization-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .visualization-title svg {
+            width: 20px;
+            height: 20px;
+            color: #9c27b0;
+        }
+
+        /* Room Selection */
+        .room-selection {
+            margin-bottom: 15px;
+        }
+
+        .room-label {
+            display: block;
+            font-weight: 500;
+            color: #495057;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .room-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .room-select:focus {
+            outline: none;
+            border-color: #9c27b0;
+        }
+
+        .room-select:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+
+        /* Element Selection */
+        .element-selection {
+            margin-bottom: 15px;
+        }
+
+        .element-label {
+            font-weight: 500;
+            color: #495057;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .element-options {
+            display: flex;
+            gap: 8px;
+        }
+
+        .element-option {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            background: white;
+            color: #495057;
+            font-weight: 500;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .element-option:hover:not(:disabled) {
+            background: #f8f9fa;
+            border-color: #ced4da;
+        }
+
+        .element-option.active {
+            background: #f3e5f5;
+            border-color: #9c27b0;
+            color: #7b1fa2;
+        }
+
+        .element-option:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Material Dropdown */
+        .material-dropdown-container {
+            margin-top: 15px;
+            animation: slideDown 0.3s ease;
+        }
+
+        .material-label {
+            display: block;
+            font-weight: 500;
+            color: #495057;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .material-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .material-select:focus {
+            outline: none;
+            border-color: #9c27b0;
+        }
+
+        .material-description {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e9ecef;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #495057;
+            border-left: 4px solid #9c27b0;
+            line-height: 1.6;
+        }
+
+        .material-description:empty {
+            display: none;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Loading Spinner */
         .spinner {
             display: none;
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #007bff;
+            border-top: 3px solid #9c27b0;
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -337,16 +533,68 @@
             <div class="chat-content">
                 <div id="statusMessage"></div>
                 
+                <!-- Question Input -->
                 <div class="input-group">
                     <label for="questionInput">Your Question:</label>
                     <textarea id="questionInput" placeholder="Enter your question about the PDF..."></textarea>
                 </div>
                 
-                <button class="btn btn-primary" onclick="askQuestion()" id="askBtn">Ask Question</button>
+                <!-- Ask Button -->
+                <button class="btn btn-primary" onclick="askQuestion()" id="askBtn" disabled>Ask Question</button>
                 
+                <!-- Answer Output -->
                 <div class="input-group">
                     <label>Answer:</label>
                     <div class="answer-output" id="answerOutput"></div>
+                </div>
+                
+                <!-- Visualization Section - Now below answer box -->
+                <div class="visualization-section">
+                    <div class="visualization-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        Visualization Options
+                    </div>
+                    
+                    <!-- Room Selection -->
+                    <div class="room-selection">
+                        <div class="room-label">Select Room:</div>
+                        <select id="roomSelect" class="room-select" disabled>
+                            <option value="">Choose a room...</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Element Selection -->
+                    <div class="element-selection">
+                        <div class="element-label">Select Element:</div>
+                        <div class="element-options">
+                            <button class="element-option" onclick="selectElement('doors')" id="doorsOption" disabled>
+                                🚪 Doors
+                            </button>
+                            <button class="element-option" onclick="selectElement('windows')" id="windowsOption" disabled>
+                                🪟 Windows
+                            </button>
+                            <button class="element-option" onclick="selectElement('walls')" id="wallsOption" disabled>
+                                🧱 Walls
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Material Dropdown (hidden by default, shown when walls is selected) -->
+                    <div id="materialContainer" class="material-dropdown-container" style="display: none;">
+                        <div class="material-label">Select Material:</div>
+                        <select id="materialSelect" class="material-select">
+                            <option value="">Choose a material...</option>
+                        </select>
+                        <div id="materialDescription" class="material-description"></div>
+                    </div>
+                    
+                    <!-- Single Visualize Button -->
+                    <button class="btn btn-visualize" onclick="visualizeSelection()" id="visualizeBtn" disabled>
+                        🔍 Visualize Selection
+                    </button>
                 </div>
                 
                 <div class="spinner" id="spinner"></div>
@@ -359,6 +607,47 @@
         let currentPageIndex = 0;
         let currentZoom = 100;
         let sessionId = null;
+        let selectedElement = null;
+        let selectedMaterial = null;
+        
+        // Mock room data
+        let roomIds = [];
+        
+        // Material data with descriptions
+        const materialData = {
+            'concrete': {
+                name: 'Concrete',
+                description: 'Reinforced concrete walls with high compressive strength. Ideal for load-bearing walls and foundation elements. Typical thickness: 200-300mm.'
+            },
+            'brick': {
+                name: 'Brick Masonry',
+                description: 'Clay brick walls with cement mortar. Provides excellent thermal mass and sound insulation. Standard brick size: 190x90x90mm.'
+            },
+            'wood': {
+                name: 'Wood Frame',
+                description: 'Timber frame construction with stud walls. Lightweight and sustainable. Common in residential construction. Standard stud spacing: 400-600mm.'
+            },
+            'steel': {
+                name: 'Steel Frame',
+                description: 'Structural steel framing with metal studs. High strength-to-weight ratio. Ideal for commercial and industrial buildings.'
+            },
+            'glass': {
+                name: 'Glass Curtain Wall',
+                description: 'Floor-to-ceiling glass panels with aluminum framing. Provides natural light and modern aesthetics. Typically used in facades.'
+            },
+            'drywall': {
+                name: 'Drywall/Plasterboard',
+                description: 'Gypsum board partitions with metal or wood studs. Quick to install and easy to modify. Standard board thickness: 12.5mm.'
+            },
+            'stone': {
+                name: 'Stone Masonry',
+                description: 'Natural stone walls with mortar. Durable and aesthetically pleasing. Common in heritage and luxury buildings.'
+            },
+            'rammed_earth': {
+                name: 'Rammed Earth',
+                description: 'Compressed earth construction. Sustainable with high thermal mass. Provides natural temperature regulation.'
+            }
+        };
 
         // File upload handler
         async function handleFileUpload(event) {
@@ -370,7 +659,7 @@
 
             showStatus('Uploading and processing PDF... This may take a moment.', 'info');
             showSpinner(true);
-            document.getElementById('askBtn').disabled = true;
+            disableAllControls(true);
 
             try {
                 const response = await fetch('/upload', {
@@ -384,10 +673,16 @@
                     currentPages = data.pages;
                     currentPageIndex = 0;
                     sessionId = data.session_id;
+                    
+                    // Mock room IDs - replace with actual data from backend
+                     if (data.rooms && data.rooms.length > 0) {
+                        updateRoomDropdown(data.rooms);
+                    }
+                    
                     showStatus(`PDF processed successfully! ${data.total_pages} page(s) loaded.`, 'success');
                     displayPage(0);
                     updatePageControls();
-                    document.getElementById('askBtn').disabled = false;
+                    disableAllControls(false);
                 } else {
                     showStatus(`Error: ${data.error}`, 'error');
                 }
@@ -395,6 +690,200 @@
                 showStatus(`Error: ${error.message}`, 'error');
             } finally {
                 showSpinner(false);
+            }
+        }
+
+        // Disable/enable all controls
+        function disableAllControls(disabled) {
+            document.getElementById('askBtn').disabled = disabled;
+            document.getElementById('roomSelect').disabled = disabled;
+            document.getElementById('visualizeBtn').disabled = disabled;
+            document.getElementById('doorsOption').disabled = disabled;
+            document.getElementById('windowsOption').disabled = disabled;
+            document.getElementById('wallsOption').disabled = disabled;
+        }
+
+
+        // Update your updateRoomDropdown function
+        function updateRoomDropdown(rooms) {
+            const select = document.getElementById('roomSelect');
+            select.innerHTML = '<option value="">Choose a room...</option>';
+            
+            rooms.forEach(room => {
+                const option = document.createElement('option');
+                // Use room.id or create one from room.name
+                option.value = room.room_id
+                option.textContent = room.room_id;
+                
+                // Add data attributes for additional room info
+                if (room.page) option.dataset.page = room.page;
+                if (room.area) option.dataset.area = room.area;
+                if (room.type) option.dataset.type = room.type;
+                
+                select.appendChild(option);
+            });
+            
+            updateVisualizeButtonState();
+            select.addEventListener('change', updateVisualizeButtonState);
+        }
+
+        // Update visualize button state based on selections
+        function updateVisualizeButtonState() {
+            const roomSelected = document.getElementById('roomSelect').value;
+            const elementSelected = selectedElement !== null;
+            const visualizeBtn = document.getElementById('visualizeBtn');
+            
+            if (selectedElement === 'walls') {
+                // For walls, require material selection as well
+                const materialSelected = document.getElementById('materialSelect')?.value;
+                visualizeBtn.disabled = !(roomSelected && elementSelected && materialSelected);
+            } else {
+                // For doors/windows, only room and element selection needed
+                visualizeBtn.disabled = !(roomSelected && elementSelected);
+            }
+        }
+
+        // Select element type (doors, windows, walls)
+        function selectElement(element) {
+            selectedElement = element;
+            
+            // Update active states
+            document.getElementById('doorsOption').classList.remove('active');
+            document.getElementById('windowsOption').classList.remove('active');
+            document.getElementById('wallsOption').classList.remove('active');
+            
+            document.getElementById(`${element}Option`).classList.add('active');
+            
+            // Show/hide material dropdown based on selection
+            const materialContainer = document.getElementById('materialContainer');
+            if (element === 'walls') {
+                materialContainer.style.display = 'block';
+                populateMaterialDropdown();
+            } else {
+                materialContainer.style.display = 'none';
+                selectedMaterial = null;
+            }
+            
+            // Update visualize button state
+            updateVisualizeButtonState();
+        }
+
+        // Populate material dropdown
+        function populateMaterialDropdown() {
+            const materialSelect = document.getElementById('materialSelect');
+            materialSelect.innerHTML = '<option value="">Choose a material...</option>';
+            
+            Object.keys(materialData).forEach(key => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = materialData[key].name;
+                materialSelect.appendChild(option);
+            });
+            
+            // Add event listener for material selection
+            materialSelect.addEventListener('change', function() {
+                selectedMaterial = this.value;
+                const description = document.getElementById('materialDescription');
+                
+                if (this.value && materialData[this.value]) {
+                    description.textContent = materialData[this.value].description;
+                } else {
+                    description.textContent = '';
+                }
+                
+                // Update visualize button state
+                updateVisualizeButtonState();
+            });
+        }
+
+        // Single visualize function for all selections
+        async function visualizeSelection() {
+            const selectedRoom = document.getElementById('roomSelect').value;
+            
+            if (!selectedRoom) {
+                showStatus('Please select a room to visualize.', 'error');
+                return;
+            }
+
+            if (!selectedElement) {
+                showStatus('Please select an element to visualize (doors, windows, or walls).', 'error');
+                return;
+            }
+
+            if (!sessionId) {
+                showStatus('Please upload a PDF first.', 'error');
+                return;
+            }
+
+            // For walls, check if material is selected
+            if (selectedElement === 'walls' && !selectedMaterial) {
+                showStatus('Please select a material for the walls.', 'error');
+                return;
+            }
+
+            showSpinner(true);
+            document.getElementById('visualizeBtn').disabled = true;
+
+            try {
+                let visualizationMessage = `Visualizing ${selectedElement}`;
+                
+                if (selectedElement === 'walls') {
+                    const materialName = materialData[selectedMaterial]?.name || selectedMaterial;
+                    visualizationMessage += ` (${materialName})`;
+                }
+                
+                visualizationMessage += ` in ${selectedRoom}...`;
+                showStatus(visualizationMessage, 'info');
+                
+                // Here you can implement your unified visualization logic
+                console.log('Visualization request:', {
+                    room: selectedRoom,
+                    element: selectedElement,
+                    material: selectedMaterial,
+                    sessionId: sessionId
+                });
+                
+                // Example API call structure:
+                /*
+                const response = await fetch('/visualize', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        room_id: selectedRoom,
+                        element_type: selectedElement,
+                        material: selectedMaterial,
+                        session_id: sessionId 
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Handle successful visualization
+                    if (data.page_index !== undefined) {
+                        currentPageIndex = data.page_index;
+                        displayPage(currentPageIndex);
+                        updatePageControls();
+                    }
+                    showStatus(`Visualization complete!`, 'success');
+                } else {
+                    showStatus(`Error: ${data.error}`, 'error');
+                }
+                */
+                
+                // Simulate visualization delay
+                setTimeout(() => {
+                    showStatus(`Visualization complete! Displaying ${selectedElement} in ${selectedRoom}.`, 'success');
+                }, 1500);
+                
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+            } finally {
+                showSpinner(false);
+                document.getElementById('visualizeBtn').disabled = false;
+                updateVisualizeButtonState();
             }
         }
 

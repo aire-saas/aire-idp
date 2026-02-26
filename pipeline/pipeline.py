@@ -19,6 +19,7 @@ import planSplitter
 from process import PDFProcessor, PageContent
 from planSplitter import PlanSplitter
 from full_iter_one_model import full_iter_one_model
+from material import WallFeaturesExtractor
 from RAG.pipeline import FloorPlanQA
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -55,7 +56,7 @@ class ArchitecturalPlanPipeline:
         self.pdf_processor = PDFProcessor(pdf_path)
         self.plan_splitter = PlanSplitter(self.pdf_processor)
         self.info_extractor = InfoGroupExtractor(pdfProcessor= self.pdf_processor)
-    
+        self.wall_features_extractor = WallFeaturesExtractor()
         
         self.pages_content: List[PageContent] = []
     
@@ -84,7 +85,7 @@ class ArchitecturalPlanPipeline:
         logger.info(f"Extracted scale: 1:{scale}")
         if (scale is not None and scale > 1):
             self.pages_content = self._scale_plans(scale)
-            self.pages_content = self._scale_Text(scale)
+            
             
 
 
@@ -92,8 +93,16 @@ class ArchitecturalPlanPipeline:
         logger.info("Step 3: Detecting rooms and architectural elements...")
         self.pages_content = self._detect_rooms()
 
-        # Step 4 : Link text to rooms
-        logger.info("Step 4: Linking text to detected rooms...")
+        # Step 4 : Detect Wall Materials
+        logger.info("Step 4: Extract wall materials")
+        self.extractWallMaterials()
+        
+        # Step 5 : Link text to rooms
+        logger.info("Step 5: Linking text to detected rooms...")
+        # scale the texts : 
+        if (scale is not None and scale > 1):
+            self.pages_content = self._scale_Text(scale)        
+        
         self.linkTextToRooms()
 
         # Step 5 : Clean JSON
@@ -344,6 +353,17 @@ class ArchitecturalPlanPipeline:
         elif isinstance(data, list):
             for item in data:
                 self.clean_jsonRooms(item)
+
+    def extractWallMaterials(self):
+        for page_content in self.pages_content:
+            
+            self.wall_features_extractor.plan = page_content.plan
+            self.wall_features_extractor.infoPanel = page_content.info_panel
+            self.wall_features_extractor.infoPanel_x = page_content.split_x
+            self.wall_features_extractor.texts = page_content.text
+            self.wall_features_extractor.rooms = page_content.rooms
+
+            self.wall_features_extractor.run()
 
     def _save_results(self):
         """Step 4: Save all results to output directory."""

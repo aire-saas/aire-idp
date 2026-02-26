@@ -1,0 +1,2724 @@
+{
+  "rooms": [
+    {
+      "room_id": 0,
+      "area_meters_sq": 16.73,
+      "perimeter_meters": 20.62,
+      "bounding_box": {
+        "x": 1145,
+        "y": 778,
+        "width": 759,
+        "height": 371
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 1904,
+          "ymin": 776,
+          "xmax": 1935,
+          "ymax": 859,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.23,
+          "wall_length": 2.8,
+          "xmin": 1632,
+          "ymin": 751,
+          "xmax": 1959,
+          "ymax": 777,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.24,
+          "wall_length": 0.47,
+          "xmin": 1118,
+          "ymin": 752,
+          "xmax": 1145,
+          "ymax": 806,
+          "detected_material": "UK OK"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 1703,
+          "ymin": 988,
+          "xmax": 1784,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 1904,
+          "ymin": 977,
+          "xmax": 1935,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "5": {
+          "wall_thickness": 0.23,
+          "wall_length": 3.71,
+          "xmin": 1115,
+          "ymin": 751,
+          "xmax": 1549,
+          "ymax": 778,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.31,
+          "xmin": 1704,
+          "ymin": 988,
+          "xmax": 1717,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 1887,
+          "ymin": 988,
+          "xmax": 1905,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.31,
+          "xmin": 1490,
+          "ymin": 988,
+          "xmax": 1503,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "9": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.16,
+          "xmin": 1141,
+          "ymin": 1149,
+          "xmax": 1511,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "10": {
+          "wall_thickness": 0.23,
+          "wall_length": 2.37,
+          "xmin": 1118,
+          "ymin": 1024,
+          "xmax": 1145,
+          "ymax": 1302,
+          "detected_material": "UK OK"
+        },
+        "11": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 1492,
+          "ymin": 1065,
+          "xmax": 1717,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "12": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 1697,
+          "ymin": 1064,
+          "xmax": 1717,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "13": {
+          "wall_thickness": 0.18,
+          "wall_length": 0.89,
+          "xmin": 1489,
+          "ymin": 1065,
+          "xmax": 1510,
+          "ymax": 1168,
+          "detected_material": "BRH RR"
+        },
+        "14": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.35,
+          "xmin": 1704,
+          "ymin": 1024,
+          "xmax": 1717,
+          "ymax": 1065,
+          "detected_material": "DD  BD"
+        },
+        "15": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.36,
+          "xmin": 1490,
+          "ymin": 1024,
+          "xmax": 1503,
+          "ymax": 1066,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 0.9825641025641025,
+        "1": 0.8726495726495725
+      },
+      "windows_count": 3,
+      "windows_lengths": {
+        "0": 0.6971794871794871,
+        "1": 1.0904273504273505,
+        "2": 0.6972649572649573
+      },
+      "words": [
+        "Kühl-",
+        "schrank",
+        "Ceranfeld",
+        "Backofen",
+        "Spül-",
+        "becken",
+        "H1 - 2.OG",
+        "17.Zimmer",
+        "+5.74",
+        "+5.59",
+        "T 1.2.10.3",
+        "System Knauf W112.de (GKB/GKBI)"
+      ]
+    },
+    {
+      "room_id": 1,
+      "area_meters_sq": 24.82,
+      "perimeter_meters": 36.6,
+      "bounding_box": {
+        "x": 1936,
+        "y": 778,
+        "width": 174,
+        "height": 1967
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 1904,
+          "ymin": 776,
+          "xmax": 1935,
+          "ymax": 859,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.23,
+          "wall_length": 2.8,
+          "xmin": 1632,
+          "ymin": 751,
+          "xmax": 1959,
+          "ymax": 777,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 1904,
+          "ymin": 977,
+          "xmax": 1935,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "3": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 2109,
+          "ymin": 775,
+          "xmax": 2141,
+          "ymax": 860,
+          "detected_material": "UK OK"
+        },
+        "4": {
+          "wall_thickness": 0.22,
+          "wall_length": 2.21,
+          "xmin": 2086,
+          "ymin": 751,
+          "xmax": 2345,
+          "ymax": 777,
+          "detected_material": "UK OK"
+        },
+        "5": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 2109,
+          "ymin": 977,
+          "xmax": 2141,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.92,
+          "xmin": 1904,
+          "ymin": 1706,
+          "xmax": 1935,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "7": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.76,
+          "xmin": 1904,
+          "ymin": 1024,
+          "xmax": 1935,
+          "ymax": 1347,
+          "detected_material": "UK OK"
+        },
+        "8": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.06,
+          "xmin": 1904,
+          "ymin": 1465,
+          "xmax": 1936,
+          "ymax": 1589,
+          "detected_material": "UK OK"
+        },
+        "9": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.68,
+          "xmin": 2109,
+          "ymin": 1024,
+          "xmax": 2140,
+          "ymax": 1337,
+          "detected_material": "UK OK"
+        },
+        "10": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.14,
+          "xmin": 2109,
+          "ymin": 1456,
+          "xmax": 2141,
+          "ymax": 1590,
+          "detected_material": "UK OK"
+        },
+        "11": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.93,
+          "xmin": 2110,
+          "ymin": 1705,
+          "xmax": 2140,
+          "ymax": 2047,
+          "detected_material": "UK OK"
+        },
+        "12": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.42,
+          "xmin": 1792,
+          "ymin": 2745,
+          "xmax": 1958,
+          "ymax": 2771,
+          "detected_material": "UK OK"
+        },
+        "13": {
+          "wall_thickness": 0.28,
+          "wall_length": 0.52,
+          "xmin": 1904,
+          "ymin": 2685,
+          "xmax": 1936,
+          "ymax": 2746,
+          "detected_material": "UK OK"
+        },
+        "14": {
+          "wall_thickness": 0.27,
+          "wall_length": 4.08,
+          "xmin": 1904,
+          "ymin": 2058,
+          "xmax": 1935,
+          "ymax": 2536,
+          "detected_material": "UK OK"
+        },
+        "15": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 2109,
+          "ymin": 2189,
+          "xmax": 2141,
+          "ymax": 2273,
+          "detected_material": "UK OK"
+        },
+        "16": {
+          "wall_thickness": 0.33,
+          "wall_length": 2.55,
+          "xmin": 2109,
+          "ymin": 2272,
+          "xmax": 2148,
+          "ymax": 2571,
+          "detected_material": "FFB  RFB RD"
+        },
+        "17": {
+          "wall_thickness": 0.24,
+          "wall_length": 2.39,
+          "xmin": 2086,
+          "ymin": 2744,
+          "xmax": 2366,
+          "ymax": 2771,
+          "detected_material": "UK OK"
+        },
+        "18": {
+          "wall_thickness": 0.33,
+          "wall_length": 6.97,
+          "xmin": 2105,
+          "ymin": 2271,
+          "xmax": 2920,
+          "ymax": 2310,
+          "detected_material": "FFB  RFB RD"
+        },
+        "19": {
+          "wall_thickness": 0.21,
+          "wall_length": 0.27,
+          "xmin": 2109,
+          "ymin": 2048,
+          "xmax": 2140,
+          "ymax": 2073,
+          "detected_material": "UK OK"
+        }
+      },
+      "doors_count": 9,
+      "doors_lengths": {
+        "0": 0.9825641025641025,
+        "1": 0.9927350427350428,
+        "2": 1.0095726495726496,
+        "3": 1.0007692307692309,
+        "4": 0.9976068376068375,
+        "5": 1.0082905982905983,
+        "6": 1.1254700854700854,
+        "7": 1.484102564102564,
+        "8": 0.9878632478632479
+      },
+      "windows_count": 4,
+      "windows_lengths": {
+        "0": 0.7639316239316238,
+        "1": 0.32213675213675214,
+        "2": 0.7622222222222222,
+        "3": 0.32264957264957267
+      },
+      "words": [
+        "H1 - 2.OG",
+        "Flur",
+        "+214.56",
+        "+214.41",
+        "RH= 2.50 m",
+        "FDUK= +217.06",
+        "RDUK= +217.06",
+        "RDOK= +214.41",
+        "H1 - 2.OG",
+        "Flur",
+        "+5.74",
+        "+5.59",
+        "E"
+      ]
+    },
+    {
+      "room_id": 2,
+      "area_meters_sq": 16.52,
+      "perimeter_meters": 20.48,
+      "bounding_box": {
+        "x": 2142,
+        "y": 778,
+        "width": 751,
+        "height": 371
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.24,
+          "wall_length": 0.42,
+          "xmin": 2423,
+          "ymin": 751,
+          "xmax": 2472,
+          "ymax": 778,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 2109,
+          "ymin": 775,
+          "xmax": 2141,
+          "ymax": 860,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2261,
+          "ymin": 988,
+          "xmax": 2341,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.22,
+          "wall_length": 2.21,
+          "xmin": 2086,
+          "ymin": 751,
+          "xmax": 2345,
+          "ymax": 777,
+          "detected_material": "UK OK"
+        },
+        "4": {
+          "wall_thickness": 0.23,
+          "wall_length": 0.48,
+          "xmin": 2893,
+          "ymin": 751,
+          "xmax": 2920,
+          "ymax": 806,
+          "detected_material": "UK OK"
+        },
+        "5": {
+          "wall_thickness": 0.23,
+          "wall_length": 3.2,
+          "xmin": 2552,
+          "ymin": 751,
+          "xmax": 2926,
+          "ymax": 778,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.31,
+          "xmin": 2541,
+          "ymin": 988,
+          "xmax": 2555,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 2109,
+          "ymin": 977,
+          "xmax": 2141,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "8": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.31,
+          "xmin": 2327,
+          "ymin": 988,
+          "xmax": 2341,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "9": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 2140,
+          "ymin": 988,
+          "xmax": 2158,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "10": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1149,
+          "xmax": 2897,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "11": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.9,
+          "xmin": 2535,
+          "ymin": 1064,
+          "xmax": 2555,
+          "ymax": 1170,
+          "detected_material": "BRH RR"
+        },
+        "12": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 2327,
+          "ymin": 1064,
+          "xmax": 2347,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "13": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 2329,
+          "ymin": 1065,
+          "xmax": 2553,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "14": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.35,
+          "xmin": 2541,
+          "ymin": 1024,
+          "xmax": 2555,
+          "ymax": 1065,
+          "detected_material": "DD  BD"
+        },
+        "15": {
+          "wall_thickness": 0.22,
+          "wall_length": 2.36,
+          "xmin": 2893,
+          "ymin": 1025,
+          "xmax": 2919,
+          "ymax": 1301,
+          "detected_material": "UK OK"
+        },
+        "16": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.35,
+          "xmin": 2327,
+          "ymin": 1024,
+          "xmax": 2341,
+          "ymax": 1065,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 0.9927350427350428,
+        "1": 0.8815384615384615
+      },
+      "windows_count": 4,
+      "windows_lengths": {
+        "0": 1.0796581196581196,
+        "1": 0.6833333333333333,
+        "2": 0.6932478632478632,
+        "3": 0.6913675213675213
+      },
+      "words": [
+        "Kühl-",
+        "schrank",
+        "Ceranfeld",
+        "Backofen",
+        "Spül-",
+        "becken",
+        "H1 - 2.OG",
+        "21.Zimmer",
+        "+5.74",
+        "+5.59",
+        "T 1.2.9.2",
+        "System Knauf W112.de (GKB/GKBI)"
+      ]
+    },
+    {
+      "room_id": 3,
+      "area_meters_sq": 3.17,
+      "perimeter_meters": 7.13,
+      "bounding_box": {
+        "x": 1718,
+        "y": 1002,
+        "width": 186,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 1703,
+          "ymin": 988,
+          "xmax": 1784,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 1904,
+          "ymin": 977,
+          "xmax": 1935,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.31,
+          "xmin": 1704,
+          "ymin": 988,
+          "xmax": 1717,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 1887,
+          "ymin": 988,
+          "xmax": 1905,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.76,
+          "xmin": 1904,
+          "ymin": 1024,
+          "xmax": 1935,
+          "ymax": 1347,
+          "detected_material": "UK OK"
+        },
+        "5": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.78,
+          "xmin": 1698,
+          "ymin": 1235,
+          "xmax": 1906,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 1492,
+          "ymin": 1065,
+          "xmax": 1717,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 1697,
+          "ymin": 1064,
+          "xmax": 1717,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.35,
+          "xmin": 1704,
+          "ymin": 1024,
+          "xmax": 1717,
+          "ymax": 1065,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.8726495726495725
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "H1 - 2.OG",
+        "17.Bad"
+      ]
+    },
+    {
+      "room_id": 4,
+      "area_meters_sq": 3.16,
+      "perimeter_meters": 7.12,
+      "bounding_box": {
+        "x": 2141,
+        "y": 1002,
+        "width": 186,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2261,
+          "ymin": 988,
+          "xmax": 2341,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.4,
+          "xmin": 2109,
+          "ymin": 977,
+          "xmax": 2141,
+          "ymax": 1024,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.31,
+          "xmin": 2327,
+          "ymin": 988,
+          "xmax": 2341,
+          "ymax": 1024,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 2140,
+          "ymin": 988,
+          "xmax": 2158,
+          "ymax": 1001,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.68,
+          "xmin": 2109,
+          "ymin": 1024,
+          "xmax": 2140,
+          "ymax": 1337,
+          "detected_material": "UK OK"
+        },
+        "5": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 2327,
+          "ymin": 1064,
+          "xmax": 2347,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 2329,
+          "ymin": 1065,
+          "xmax": 2553,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1235,
+          "xmax": 2346,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.35,
+          "xmin": 2327,
+          "ymin": 1024,
+          "xmax": 2341,
+          "ymax": 1065,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.8815384615384615
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "H1 - 2.OG",
+        "21.Bad"
+      ]
+    },
+    {
+      "room_id": 5,
+      "area_meters_sq": 3.16,
+      "perimeter_meters": 7.12,
+      "bounding_box": {
+        "x": 1511,
+        "y": 1085,
+        "width": 186,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.68,
+          "xmin": 1631,
+          "ymin": 1318,
+          "xmax": 1711,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "1": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.16,
+          "xmin": 1141,
+          "ymin": 1149,
+          "xmax": 1511,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.78,
+          "xmin": 1698,
+          "ymin": 1235,
+          "xmax": 1906,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 1492,
+          "ymin": 1065,
+          "xmax": 1717,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 1697,
+          "ymin": 1064,
+          "xmax": 1717,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.18,
+          "wall_length": 0.89,
+          "xmin": 1489,
+          "ymin": 1065,
+          "xmax": 1510,
+          "ymax": 1168,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.27,
+          "xmin": 1496,
+          "ymin": 1318,
+          "xmax": 1527,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.66,
+          "xmin": 1697,
+          "ymin": 1254,
+          "xmax": 1711,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.12,
+          "wall_length": 1.36,
+          "xmin": 1496,
+          "ymin": 1170,
+          "xmax": 1510,
+          "ymax": 1330,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.892991452991453
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "T 1.2.10.2",
+        "H1 - 2.OG",
+        "18.Bad"
+      ]
+    },
+    {
+      "room_id": 6,
+      "area_meters_sq": 3.18,
+      "perimeter_meters": 7.15,
+      "bounding_box": {
+        "x": 2348,
+        "y": 1085,
+        "width": 187,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1149,
+          "xmax": 2897,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "1": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2333,
+          "ymin": 1318,
+          "xmax": 2414,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.27,
+          "xmin": 2516,
+          "ymin": 1318,
+          "xmax": 2548,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.9,
+          "xmin": 2535,
+          "ymin": 1064,
+          "xmax": 2555,
+          "ymax": 1170,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 2327,
+          "ymin": 1064,
+          "xmax": 2347,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.92,
+          "xmin": 2329,
+          "ymin": 1065,
+          "xmax": 2553,
+          "ymax": 1084,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1235,
+          "xmax": 2346,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.67,
+          "xmin": 2334,
+          "ymin": 1253,
+          "xmax": 2347,
+          "ymax": 1332,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.39,
+          "xmin": 2535,
+          "ymin": 1168,
+          "xmax": 2548,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.879059829059829
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "T 1.2.9.3",
+        "H1 - 2.OG",
+        "22.Bad"
+      ]
+    },
+    {
+      "room_id": 7,
+      "area_meters_sq": 17.37,
+      "perimeter_meters": 20.74,
+      "bounding_box": {
+        "x": 1146,
+        "y": 1170,
+        "width": 758,
+        "height": 382
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.76,
+          "xmin": 1904,
+          "ymin": 1024,
+          "xmax": 1935,
+          "ymax": 1347,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.06,
+          "xmin": 1904,
+          "ymin": 1465,
+          "xmax": 1936,
+          "ymax": 1589,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.67,
+          "xmin": 1118,
+          "ymin": 1512,
+          "xmax": 1145,
+          "ymax": 1706,
+          "detected_material": "UK OK"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.68,
+          "xmin": 1631,
+          "ymin": 1318,
+          "xmax": 1711,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.16,
+          "xmin": 1141,
+          "ymin": 1149,
+          "xmax": 1511,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.23,
+          "wall_length": 2.37,
+          "xmin": 1118,
+          "ymin": 1024,
+          "xmax": 1145,
+          "ymax": 1302,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.78,
+          "xmin": 1698,
+          "ymin": 1235,
+          "xmax": 1906,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 1697,
+          "ymin": 1064,
+          "xmax": 1717,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.18,
+          "wall_length": 0.89,
+          "xmin": 1489,
+          "ymin": 1065,
+          "xmax": 1510,
+          "ymax": 1168,
+          "detected_material": "BRH RR"
+        },
+        "9": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.27,
+          "xmin": 1496,
+          "ymin": 1318,
+          "xmax": 1527,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "10": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.66,
+          "xmin": 1697,
+          "ymin": 1254,
+          "xmax": 1711,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "11": {
+          "wall_thickness": 0.12,
+          "wall_length": 1.36,
+          "xmin": 1496,
+          "ymin": 1170,
+          "xmax": 1510,
+          "ymax": 1330,
+          "detected_material": "DD  BD"
+        },
+        "12": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1384,
+          "ymin": 1553,
+          "xmax": 1864,
+          "ymax": 1573,
+          "detected_material": "BRH RR"
+        },
+        "13": {
+          "wall_thickness": 0.18,
+          "wall_length": 6.74,
+          "xmin": 1116,
+          "ymin": 1552,
+          "xmax": 1905,
+          "ymax": 1573,
+          "detected_material": "BRH RR"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 1.0095726495726496,
+        "1": 0.892991452991453
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 1.093846153846154,
+        "1": 0.6953846153846154
+      },
+      "words": [
+        "Spül-",
+        "becken",
+        "Ceranfeld",
+        "Backofen",
+        "Kühl-",
+        "schrank",
+        "H1 - 2.OG",
+        "18.Zimmer",
+        "+5.74",
+        "+5.59"
+      ]
+    },
+    {
+      "room_id": 8,
+      "area_meters_sq": 15.98,
+      "perimeter_meters": 20.61,
+      "bounding_box": {
+        "x": 2142,
+        "y": 1170,
+        "width": 751,
+        "height": 381
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.27,
+          "wall_length": 2.68,
+          "xmin": 2109,
+          "ymin": 1024,
+          "xmax": 2140,
+          "ymax": 1337,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.14,
+          "xmin": 2109,
+          "ymin": 1456,
+          "xmax": 2141,
+          "ymax": 1590,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1149,
+          "xmax": 2897,
+          "ymax": 1169,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2333,
+          "ymin": 1318,
+          "xmax": 2414,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.27,
+          "xmin": 2516,
+          "ymin": 1318,
+          "xmax": 2548,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "5": {
+          "wall_thickness": 0.18,
+          "wall_length": 1.81,
+          "xmin": 2139,
+          "ymin": 1475,
+          "xmax": 2350,
+          "ymax": 1495,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.9,
+          "xmin": 2535,
+          "ymin": 1064,
+          "xmax": 2555,
+          "ymax": 1170,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.63,
+          "xmin": 2327,
+          "ymin": 1064,
+          "xmax": 2347,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.18,
+          "wall_length": 0.83,
+          "xmin": 2330,
+          "ymin": 1474,
+          "xmax": 2350,
+          "ymax": 1572,
+          "detected_material": "BRH RR"
+        },
+        "9": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1235,
+          "xmax": 2346,
+          "ymax": 1255,
+          "detected_material": "BRH RR"
+        },
+        "10": {
+          "wall_thickness": 0.22,
+          "wall_length": 1.67,
+          "xmin": 2893,
+          "ymin": 1512,
+          "xmax": 2919,
+          "ymax": 1707,
+          "detected_material": "UK OK"
+        },
+        "11": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.67,
+          "xmin": 2334,
+          "ymin": 1253,
+          "xmax": 2347,
+          "ymax": 1332,
+          "detected_material": "DD  BD"
+        },
+        "12": {
+          "wall_thickness": 0.22,
+          "wall_length": 2.36,
+          "xmin": 2893,
+          "ymin": 1025,
+          "xmax": 2919,
+          "ymax": 1301,
+          "detected_material": "UK OK"
+        },
+        "13": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.39,
+          "xmin": 2535,
+          "ymin": 1168,
+          "xmax": 2548,
+          "ymax": 1331,
+          "detected_material": "DD  BD"
+        },
+        "14": {
+          "wall_thickness": 0.18,
+          "wall_length": 4.84,
+          "xmin": 2331,
+          "ymin": 1551,
+          "xmax": 2897,
+          "ymax": 1572,
+          "detected_material": "BRH RR"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 0.9976068376068375,
+        "1": 0.879059829059829
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 1.0965811965811967,
+        "1": 0.6882905982905984
+      },
+      "words": [
+        "Kühl-",
+        "schrank",
+        "Ceranfeld",
+        "Backofen",
+        "Spül-",
+        "becken",
+        "H1 - 2.OG",
+        "22.Zimmer",
+        "+5.74",
+        "+5.59"
+      ]
+    },
+    {
+      "room_id": 9,
+      "area_meters_sq": 15.62,
+      "perimeter_meters": 21.31,
+      "bounding_box": {
+        "x": 2141,
+        "y": 1496,
+        "width": 753,
+        "height": 421
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.14,
+          "xmin": 2109,
+          "ymin": 1456,
+          "xmax": 2141,
+          "ymax": 1590,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.93,
+          "xmin": 2110,
+          "ymin": 1705,
+          "xmax": 2140,
+          "ymax": 2047,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.68,
+          "xmin": 2260,
+          "ymin": 1724,
+          "xmax": 2340,
+          "ymax": 1737,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.41,
+          "xmin": 2327,
+          "ymin": 1826,
+          "xmax": 2347,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1917,
+          "xmax": 2897,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.22,
+          "wall_length": 1.12,
+          "xmin": 2894,
+          "ymin": 1917,
+          "xmax": 2920,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.18,
+          "wall_length": 1.81,
+          "xmin": 2139,
+          "ymin": 1475,
+          "xmax": 2350,
+          "ymax": 1495,
+          "detected_material": "BRH RR"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.95,
+          "xmin": 2534,
+          "ymin": 1826,
+          "xmax": 2555,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.66,
+          "xmin": 2541,
+          "ymin": 1749,
+          "xmax": 2555,
+          "ymax": 1826,
+          "detected_material": "DD  BD"
+        },
+        "9": {
+          "wall_thickness": 0.18,
+          "wall_length": 0.83,
+          "xmin": 2330,
+          "ymin": 1474,
+          "xmax": 2350,
+          "ymax": 1572,
+          "detected_material": "BRH RR"
+        },
+        "10": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.94,
+          "xmin": 2328,
+          "ymin": 1826,
+          "xmax": 2554,
+          "ymax": 1845,
+          "detected_material": "BRH RR"
+        },
+        "11": {
+          "wall_thickness": 0.22,
+          "wall_length": 1.67,
+          "xmin": 2893,
+          "ymin": 1512,
+          "xmax": 2919,
+          "ymax": 1707,
+          "detected_material": "UK OK"
+        },
+        "12": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 2140,
+          "ymin": 1725,
+          "xmax": 2158,
+          "ymax": 1737,
+          "detected_material": "DD  BD"
+        },
+        "13": {
+          "wall_thickness": 0.18,
+          "wall_length": 4.84,
+          "xmin": 2331,
+          "ymin": 1551,
+          "xmax": 2897,
+          "ymax": 1572,
+          "detected_material": "BRH RR"
+        },
+        "14": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.86,
+          "xmin": 2328,
+          "ymin": 1726,
+          "xmax": 2341,
+          "ymax": 1826,
+          "detected_material": "KB T30-180 "
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 1.0082905982905983,
+        "1": 0.8992307692307692
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 1.1034188034188033,
+        "1": 0.6902564102564103
+      },
+      "words": [
+        "H1 - 2.OG",
+        "23.Zimmer",
+        "+5.74",
+        "+5.59",
+        "Kühl-",
+        "Ceranfeld",
+        "Spül-",
+        "T 1.2.9.4"
+      ]
+    },
+    {
+      "room_id": 10,
+      "area_meters_sq": 18.67,
+      "perimeter_meters": 21.05,
+      "bounding_box": {
+        "x": 1146,
+        "y": 1574,
+        "width": 758,
+        "height": 404
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.92,
+          "xmin": 1904,
+          "ymin": 1706,
+          "xmax": 1935,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.27,
+          "wall_length": 1.06,
+          "xmin": 1904,
+          "ymin": 1465,
+          "xmax": 1936,
+          "ymax": 1589,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.12,
+          "xmin": 1118,
+          "ymin": 1917,
+          "xmax": 1145,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "3": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.67,
+          "xmin": 1118,
+          "ymin": 1512,
+          "xmax": 1145,
+          "ymax": 1706,
+          "detected_material": "UK OK"
+        },
+        "4": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.58,
+          "xmin": 1838,
+          "ymin": 1731,
+          "xmax": 1906,
+          "ymax": 1745,
+          "detected_material": "DD  BD"
+        },
+        "5": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.88,
+          "xmin": 1632,
+          "ymin": 1731,
+          "xmax": 1735,
+          "ymax": 1745,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 2.01,
+          "xmin": 1704,
+          "ymin": 1744,
+          "xmax": 1717,
+          "ymax": 1979,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1352,
+          "ymin": 1978,
+          "xmax": 1832,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "8": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1224,
+          "ymin": 1978,
+          "xmax": 1704,
+          "ymax": 1999,
+          "detected_material": "BRH RR"
+        },
+        "9": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1384,
+          "ymin": 1553,
+          "xmax": 1864,
+          "ymax": 1573,
+          "detected_material": "BRH RR"
+        },
+        "10": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.94,
+          "xmin": 1449,
+          "ymin": 1978,
+          "xmax": 1910,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "11": {
+          "wall_thickness": 0.18,
+          "wall_length": 6.74,
+          "xmin": 1116,
+          "ymin": 1552,
+          "xmax": 1905,
+          "ymax": 1573,
+          "detected_material": "BRH RR"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 1.0007692307692309,
+        "1": 0.884102564102564
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 0.6944444444444444,
+        "1": 1.101965811965812
+      },
+      "words": [
+        "Kühl-",
+        "schrank",
+        "Ceranfeld",
+        "Backofen",
+        "Spül-",
+        "becken",
+        "H1 - 2.OG",
+        "19.Zimmer",
+        "+5.74",
+        "+5.59",
+        "System Knauf W115.de (GKF/GKFI)"
+      ]
+    },
+    {
+      "room_id": 11,
+      "area_meters_sq": 3.17,
+      "perimeter_meters": 7.13,
+      "bounding_box": {
+        "x": 2141,
+        "y": 1738,
+        "width": 186,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.93,
+          "xmin": 2110,
+          "ymin": 1705,
+          "xmax": 2140,
+          "ymax": 2047,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.68,
+          "xmin": 2260,
+          "ymin": 1724,
+          "xmax": 2340,
+          "ymax": 1737,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.41,
+          "xmin": 2327,
+          "ymin": 1826,
+          "xmax": 2347,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.94,
+          "xmin": 2328,
+          "ymin": 1826,
+          "xmax": 2554,
+          "ymax": 1845,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1971,
+          "xmax": 2346,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.16,
+          "xmin": 2140,
+          "ymin": 1725,
+          "xmax": 2158,
+          "ymax": 1737,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.86,
+          "xmin": 2328,
+          "ymin": 1726,
+          "xmax": 2341,
+          "ymax": 1826,
+          "detected_material": "KB T30-180 "
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.8992307692307692
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "H1 - 2.OG",
+        "23.Bad"
+      ]
+    },
+    {
+      "room_id": 12,
+      "area_meters_sq": 3.15,
+      "perimeter_meters": 7.11,
+      "bounding_box": {
+        "x": 1718,
+        "y": 1746,
+        "width": 186,
+        "height": 232
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.92,
+          "xmin": 1904,
+          "ymin": 1706,
+          "xmax": 1935,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.58,
+          "xmin": 1838,
+          "ymin": 1731,
+          "xmax": 1906,
+          "ymax": 1745,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.88,
+          "xmin": 1632,
+          "ymin": 1731,
+          "xmax": 1735,
+          "ymax": 1745,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 2.01,
+          "xmin": 1704,
+          "ymin": 1744,
+          "xmax": 1717,
+          "ymax": 1979,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1352,
+          "ymin": 1978,
+          "xmax": 1832,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.94,
+          "xmin": 1449,
+          "ymin": 1978,
+          "xmax": 1910,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.884102564102564
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "T 1.2.9.1",
+        "H1 - 2.OG",
+        "19.Bad"
+      ]
+    },
+    {
+      "room_id": 13,
+      "area_meters_sq": 3.17,
+      "perimeter_meters": 7.13,
+      "bounding_box": {
+        "x": 2348,
+        "y": 1846,
+        "width": 186,
+        "height": 233
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.41,
+          "xmin": 2327,
+          "ymin": 1826,
+          "xmax": 2347,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "1": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1917,
+          "xmax": 2897,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.95,
+          "xmin": 2534,
+          "ymin": 1826,
+          "xmax": 2555,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.94,
+          "xmin": 2328,
+          "ymin": 1826,
+          "xmax": 2554,
+          "ymax": 1845,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1971,
+          "xmax": 2346,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.5,
+          "xmin": 2334,
+          "ymin": 1990,
+          "xmax": 2347,
+          "ymax": 2048,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.96,
+          "xmin": 2534,
+          "ymin": 1936,
+          "xmax": 2548,
+          "ymax": 2048,
+          "detected_material": "KB T30-180 "
+        },
+        "7": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.26,
+          "xmin": 2517,
+          "ymin": 2079,
+          "xmax": 2548,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2334,
+          "ymin": 2079,
+          "xmax": 2414,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "9": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.38,
+          "xmin": 2333,
+          "ymin": 2048,
+          "xmax": 2347,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "10": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.38,
+          "xmin": 2535,
+          "ymin": 2048,
+          "xmax": 2548,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.8808547008547009
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "T 1.2.9.5",
+        "H1 - 2.OG",
+        "24.Bad"
+      ]
+    },
+    {
+      "room_id": 14,
+      "area_meters_sq": 15.1,
+      "perimeter_meters": 20.24,
+      "bounding_box": {
+        "x": 2141,
+        "y": 1938,
+        "width": 753,
+        "height": 333
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.93,
+          "xmin": 2110,
+          "ymin": 1705,
+          "xmax": 2140,
+          "ymax": 2047,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.41,
+          "xmin": 2327,
+          "ymin": 1826,
+          "xmax": 2347,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.09,
+          "xmin": 2535,
+          "ymin": 1917,
+          "xmax": 2897,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.22,
+          "wall_length": 1.12,
+          "xmin": 2894,
+          "ymin": 1917,
+          "xmax": 2920,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 0.95,
+          "xmin": 2534,
+          "ymin": 1826,
+          "xmax": 2555,
+          "ymax": 1937,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.17,
+          "wall_length": 1.77,
+          "xmin": 2139,
+          "ymin": 1971,
+          "xmax": 2346,
+          "ymax": 1991,
+          "detected_material": "BRH RR"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.5,
+          "xmin": 2334,
+          "ymin": 1990,
+          "xmax": 2347,
+          "ymax": 2048,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.96,
+          "xmin": 2534,
+          "ymin": 1936,
+          "xmax": 2548,
+          "ymax": 2048,
+          "detected_material": "KB T30-180 "
+        },
+        "8": {
+          "wall_thickness": 0.27,
+          "wall_length": 0.72,
+          "xmin": 2109,
+          "ymin": 2189,
+          "xmax": 2141,
+          "ymax": 2273,
+          "detected_material": "UK OK"
+        },
+        "9": {
+          "wall_thickness": 0.33,
+          "wall_length": 2.55,
+          "xmin": 2109,
+          "ymin": 2272,
+          "xmax": 2148,
+          "ymax": 2571,
+          "detected_material": "FFB  RFB RD"
+        },
+        "10": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.26,
+          "xmin": 2517,
+          "ymin": 2079,
+          "xmax": 2548,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "11": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.69,
+          "xmin": 2334,
+          "ymin": 2079,
+          "xmax": 2414,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "12": {
+          "wall_thickness": 0.33,
+          "wall_length": 6.97,
+          "xmin": 2105,
+          "ymin": 2271,
+          "xmax": 2920,
+          "ymax": 2310,
+          "detected_material": "FFB  RFB RD"
+        },
+        "13": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.38,
+          "xmin": 2333,
+          "ymin": 2048,
+          "xmax": 2347,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "14": {
+          "wall_thickness": 0.23,
+          "wall_length": 4.3,
+          "xmin": 2894,
+          "ymin": 2271,
+          "xmax": 2920,
+          "ymax": 2774,
+          "detected_material": "FFB  RFB RD"
+        },
+        "15": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.38,
+          "xmin": 2535,
+          "ymin": 2048,
+          "xmax": 2548,
+          "ymax": 2092,
+          "detected_material": "DD  BD"
+        },
+        "16": {
+          "wall_thickness": 0.21,
+          "wall_length": 0.27,
+          "xmin": 2109,
+          "ymin": 2048,
+          "xmax": 2140,
+          "ymax": 2073,
+          "detected_material": "UK OK"
+        },
+        "17": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.23,
+          "xmin": 2893,
+          "ymin": 2048,
+          "xmax": 2920,
+          "ymax": 2061,
+          "detected_material": "UK OK"
+        }
+      },
+      "doors_count": 2,
+      "doors_lengths": {
+        "0": 0.9878632478632479,
+        "1": 0.8808547008547009
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 1.0986324786324786,
+        "1": 0.7046153846153846
+      },
+      "words": [
+        "H1 - 2.OG",
+        "24.Zimmer",
+        "+5.74",
+        "+5.59"
+      ]
+    },
+    {
+      "room_id": 15,
+      "area_meters_sq": 4.08,
+      "perimeter_meters": 8.06,
+      "bounding_box": {
+        "x": 1683,
+        "y": 1999,
+        "width": 221,
+        "height": 253
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.26,
+          "wall_length": 2.92,
+          "xmin": 1904,
+          "ymin": 1706,
+          "xmax": 1935,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.43,
+          "xmin": 1669,
+          "ymin": 1997,
+          "xmax": 1682,
+          "ymax": 2048,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1352,
+          "ymin": 1978,
+          "xmax": 1832,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1224,
+          "ymin": 1978,
+          "xmax": 1704,
+          "ymax": 1999,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.94,
+          "xmin": 1449,
+          "ymin": 1978,
+          "xmax": 1910,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.8,
+          "xmin": 1812,
+          "ymin": 2253,
+          "xmax": 1906,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.12,
+          "xmin": 1681,
+          "ymin": 2253,
+          "xmax": 1695,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.12,
+          "wall_length": 1.97,
+          "xmin": 1669,
+          "ymin": 2048,
+          "xmax": 1682,
+          "ymax": 2279,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.27,
+          "wall_length": 4.08,
+          "xmin": 1904,
+          "ymin": 2058,
+          "xmax": 1935,
+          "ymax": 2536,
+          "detected_material": "UK OK"
+        },
+        "9": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.22,
+          "xmin": 1669,
+          "ymin": 2253,
+          "xmax": 1695,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 1.0004273504273504
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "T 1.2.12",
+        "H1 - 2.OG",
+        "20.Bad_Barrierefrei"
+      ]
+    },
+    {
+      "room_id": 16,
+      "area_meters_sq": 14.22,
+      "perimeter_meters": 15.98,
+      "bounding_box": {
+        "x": 1146,
+        "y": 2000,
+        "width": 523,
+        "height": 415
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.12,
+          "xmin": 1118,
+          "ymin": 1917,
+          "xmax": 1145,
+          "ymax": 2048,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.43,
+          "xmin": 1669,
+          "ymin": 1997,
+          "xmax": 1682,
+          "ymax": 2048,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1352,
+          "ymin": 1978,
+          "xmax": 1832,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "3": {
+          "wall_thickness": 0.17,
+          "wall_length": 4.1,
+          "xmin": 1224,
+          "ymin": 1978,
+          "xmax": 1704,
+          "ymax": 1999,
+          "detected_material": "BRH RR"
+        },
+        "4": {
+          "wall_thickness": 0.17,
+          "wall_length": 3.94,
+          "xmin": 1449,
+          "ymin": 1978,
+          "xmax": 1910,
+          "ymax": 1998,
+          "detected_material": "BRH RR"
+        },
+        "5": {
+          "wall_thickness": 0.22,
+          "wall_length": 0.79,
+          "xmin": 1119,
+          "ymin": 2048,
+          "xmax": 1145,
+          "ymax": 2140,
+          "detected_material": "UK OK"
+        },
+        "6": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.31,
+          "xmin": 1118,
+          "ymin": 2351,
+          "xmax": 1146,
+          "ymax": 2505,
+          "detected_material": "UK OK"
+        },
+        "7": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.42,
+          "xmin": 1669,
+          "ymin": 2396,
+          "xmax": 1682,
+          "ymax": 2562,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.66,
+          "xmin": 1477,
+          "ymin": 2351,
+          "xmax": 1490,
+          "ymax": 2428,
+          "detected_material": "DD  BD"
+        },
+        "9": {
+          "wall_thickness": 0.12,
+          "wall_length": 2.96,
+          "xmin": 1142,
+          "ymin": 2351,
+          "xmax": 1489,
+          "ymax": 2365,
+          "detected_material": "DD  BD"
+        },
+        "10": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.65,
+          "xmin": 1477,
+          "ymin": 2415,
+          "xmax": 1670,
+          "ymax": 2428,
+          "detected_material": "DD  BD"
+        },
+        "11": {
+          "wall_thickness": 0.12,
+          "wall_length": 1.97,
+          "xmin": 1669,
+          "ymin": 2048,
+          "xmax": 1682,
+          "ymax": 2279,
+          "detected_material": "DD  BD"
+        },
+        "12": {
+          "wall_thickness": 0.1,
+          "wall_length": 0.11,
+          "xmin": 1669,
+          "ymin": 2267,
+          "xmax": 1682,
+          "ymax": 2279,
+          "detected_material": "DD  BD"
+        },
+        "13": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.22,
+          "xmin": 1669,
+          "ymin": 2253,
+          "xmax": 1695,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.9852991452991453
+      },
+      "windows_count": 2,
+      "windows_lengths": {
+        "0": 0.701965811965812,
+        "1": 1.0946153846153845
+      },
+      "words": [
+        "H1 - 2.OG",
+        "20.1.Zimmer",
+        "+5.74",
+        "+5.59",
+        "T 1.2.6.1",
+        "System Knauf W112.de (GKB/GKBI)"
+      ]
+    },
+    {
+      "room_id": 17,
+      "area_meters_sq": 6.69,
+      "perimeter_meters": 10.84,
+      "bounding_box": {
+        "x": 1683,
+        "y": 2267,
+        "width": 221,
+        "height": 416
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.8,
+          "xmin": 1812,
+          "ymin": 2253,
+          "xmax": 1906,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        },
+        "1": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.57,
+          "xmin": 1668,
+          "ymin": 2680,
+          "xmax": 1682,
+          "ymax": 2746,
+          "detected_material": "DD  BD"
+        },
+        "2": {
+          "wall_thickness": 0.28,
+          "wall_length": 0.52,
+          "xmin": 1904,
+          "ymin": 2685,
+          "xmax": 1936,
+          "ymax": 2746,
+          "detected_material": "UK OK"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.42,
+          "xmin": 1669,
+          "ymin": 2396,
+          "xmax": 1682,
+          "ymax": 2562,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.12,
+          "xmin": 1681,
+          "ymin": 2253,
+          "xmax": 1695,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        },
+        "5": {
+          "wall_thickness": 0.12,
+          "wall_length": 1.97,
+          "xmin": 1669,
+          "ymin": 2048,
+          "xmax": 1682,
+          "ymax": 2279,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.27,
+          "wall_length": 4.08,
+          "xmin": 1904,
+          "ymin": 2058,
+          "xmax": 1935,
+          "ymax": 2536,
+          "detected_material": "UK OK"
+        },
+        "7": {
+          "wall_thickness": 0.1,
+          "wall_length": 0.11,
+          "xmin": 1669,
+          "ymin": 2267,
+          "xmax": 1682,
+          "ymax": 2279,
+          "detected_material": "DD  BD"
+        },
+        "8": {
+          "wall_thickness": 0.06,
+          "wall_length": 1.16,
+          "xmin": 1769,
+          "ymin": 2683,
+          "xmax": 1905,
+          "ymax": 2689,
+          "detected_material": "          G30-180  F30-180"
+        },
+        "9": {
+          "wall_thickness": 0.11,
+          "wall_length": 0.22,
+          "xmin": 1669,
+          "ymin": 2253,
+          "xmax": 1695,
+          "ymax": 2266,
+          "detected_material": "DD  BD"
+        }
+      },
+      "doors_count": 4,
+      "doors_lengths": {
+        "0": 1.1254700854700854,
+        "1": 1.0004273504273504,
+        "2": 0.9852991452991453,
+        "3": 0.9912820512820513
+      },
+      "windows_count": 0,
+      "windows_lengths": {},
+      "words": [
+        "Kühl-",
+        "schrank",
+        "Ceranfeld",
+        "Backofen",
+        "Geschirr-",
+        "spüler",
+        "Spül-",
+        "becken",
+        "H1 - 2.OG",
+        "20.Küche/Flur",
+        "+5.74",
+        "+5.59"
+      ]
+    },
+    {
+      "room_id": 18,
+      "area_meters_sq": 13.51,
+      "perimeter_meters": 15.34,
+      "bounding_box": {
+        "x": 1147,
+        "y": 2366,
+        "width": 522,
+        "height": 378
+      },
+      "walls": {
+        "0": {
+          "wall_thickness": 0.23,
+          "wall_length": 1.31,
+          "xmin": 1118,
+          "ymin": 2351,
+          "xmax": 1146,
+          "ymax": 2505,
+          "detected_material": "UK OK"
+        },
+        "1": {
+          "wall_thickness": 0.23,
+          "wall_length": 0.68,
+          "xmin": 1632,
+          "ymin": 2744,
+          "xmax": 1712,
+          "ymax": 2771,
+          "detected_material": "UK OK"
+        },
+        "2": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.57,
+          "xmin": 1668,
+          "ymin": 2680,
+          "xmax": 1682,
+          "ymax": 2746,
+          "detected_material": "DD  BD"
+        },
+        "3": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.42,
+          "xmin": 1669,
+          "ymin": 2396,
+          "xmax": 1682,
+          "ymax": 2562,
+          "detected_material": "DD  BD"
+        },
+        "4": {
+          "wall_thickness": 0.12,
+          "wall_length": 0.66,
+          "xmin": 1477,
+          "ymin": 2351,
+          "xmax": 1490,
+          "ymax": 2428,
+          "detected_material": "DD  BD"
+        },
+        "5": {
+          "wall_thickness": 0.12,
+          "wall_length": 2.96,
+          "xmin": 1142,
+          "ymin": 2351,
+          "xmax": 1489,
+          "ymax": 2365,
+          "detected_material": "DD  BD"
+        },
+        "6": {
+          "wall_thickness": 0.11,
+          "wall_length": 1.65,
+          "xmin": 1477,
+          "ymin": 2415,
+          "xmax": 1670,
+          "ymax": 2428,
+          "detected_material": "DD  BD"
+        },
+        "7": {
+          "wall_thickness": 0.23,
+          "wall_length": 0.47,
+          "xmin": 1118,
+          "ymin": 2715,
+          "xmax": 1145,
+          "ymax": 2770,
+          "detected_material": "UK OK"
+        },
+        "8": {
+          "wall_thickness": 0.23,
+          "wall_length": 3.76,
+          "xmin": 1108,
+          "ymin": 2744,
+          "xmax": 1548,
+          "ymax": 2771,
+          "detected_material": "UK OK"
+        }
+      },
+      "doors_count": 1,
+      "doors_lengths": {
+        "0": 0.9912820512820513
+      },
+      "windows_count": 3,
+      "windows_lengths": {
+        "0": 1.1088034188034188,
+        "1": 0.6976923076923076,
+        "2": 0.6841880341880342
+      },
+      "words": [
+        "H1 - 2.OG",
+        "20.2.Zimmer",
+        "+5.74",
+        "+5.59",
+        "T 1.2.6.2"
+      ]
+    }
+  ],
+  "stairs": [
+    {
+      "stairs_id": 0,
+      "bounding_box": {
+        "xmin": 2584,
+        "ymin": 2587,
+        "xmax": 2890,
+        "ymax": 2739,
+        "width": 306,
+        "height": 152
+      },
+      "parts": [
+        {
+          "xmin": 2584,
+          "ymin": 2587,
+          "xmax": 2890,
+          "ymax": 2739,
+          "width": 306,
+          "height": 152
+        },
+        {
+          "xmin": 2738,
+          "ymin": 2311,
+          "xmax": 2892,
+          "ymax": 2587,
+          "width": 154,
+          "height": 276
+        },
+        {
+          "xmin": 2374,
+          "ymin": 2311,
+          "xmax": 2525,
+          "ymax": 2561,
+          "width": 151,
+          "height": 250
+        },
+        {
+          "xmin": 2525,
+          "ymin": 2311,
+          "xmax": 2737,
+          "ymax": 2463,
+          "width": 212,
+          "height": 152
+        },
+        {
+          "xmin": 2531,
+          "ymin": 2468,
+          "xmax": 2736,
+          "ymax": 2587,
+          "width": 205,
+          "height": 119
+        }
+      ],
+      "total_area_pixels": 183385,
+      "total_area_meters_sq": 13.4,
+      "confidence": 0.837
+    }
+  ],
+  "aufzugs": [
+    {
+      "aufzug_id": 0,
+      "bounding_box": {
+        "xmin": 2149,
+        "ymin": 2311,
+        "xmax": 2333,
+        "ymax": 2546,
+        "width": 184,
+        "height": 235
+      },
+      "area_meters_sq": 3.16,
+      "confidence": 0.953
+    }
+  ]
+}
