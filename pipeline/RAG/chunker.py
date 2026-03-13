@@ -206,6 +206,86 @@ CHANGE HISTORY (Änderungen):
                 lines.append(f"  {date} ({name}): {desc}")
         return '\n'.join(lines) if lines else "  No changes recorded"
     
+    def _format_wall_materials_and_thickness(self, room: RoomData) -> str:
+        """Format wall materials and thickness information from room data."""
+        if not hasattr(room, 'walls') or not room.walls:
+            return "  No wall data available"
+        
+        lines = []
+        materials_summary = {}
+        total_wall_length = 0
+        
+        # Aggregate data by material
+        for wall in room.walls:
+            material = wall.get('detected_material', 'Unknown')
+            thickness = wall.get('wall_thickness', 0)
+            length = wall.get('wall_length', 0)
+            position = wall.get('position', 'unknown')
+            
+            if material not in materials_summary:
+                materials_summary[material] = {
+                    'thicknesses': [],
+                    'total_length': 0,
+                    'count': 0,
+                    'positions': []
+                }
+            
+            materials_summary[material]['thicknesses'].append(thickness)
+            materials_summary[material]['total_length'] += length
+            materials_summary[material]['count'] += 1
+            materials_summary[material]['positions'].append(position)
+            total_wall_length += length
+        
+        # Format summary by material type
+        lines.append("WALL MATERIALS AND THICKNESS (WANDMATERIAL UND WANDDICKE):")
+        for material in sorted(materials_summary.keys()):
+            data = materials_summary[material]
+            min_thickness = min(data['thicknesses']) if data['thicknesses'] else 0
+            max_thickness = max(data['thicknesses']) if data['thicknesses'] else 0
+            avg_thickness = sum(data['thicknesses']) / len(data['thicknesses']) if data['thicknesses'] else 0
+            
+            # Convert to cm for readability if needed
+            min_cm = min_thickness * 100
+            max_cm = max_thickness * 100
+            avg_cm = avg_thickness * 100
+            
+            lines.append(f"  {material}:")
+            lines.append(f"    Thickness (Wanddicke): {min_cm:.1f}cm - {max_cm:.1f}cm (avg: {avg_cm:.1f}cm)")
+            lines.append(f"    Total Length (Gesamtlänge): {data['total_length']:.2f}m ({data['count']} wall segments)")
+            
+            # Add position info if available
+            unique_positions = set(p for p in data['positions'] if p)
+            if unique_positions:
+                pos_str = ', '.join(sorted(unique_positions))
+                lines.append(f"    Position: {pos_str}")
+        
+        lines.append(f"\n  Total Wall Perimeter (Gesamter Wandumfang): {total_wall_length:.2f}m")
+        
+        return '\n'.join(lines)
+    
+    def _format_room_walls_detail(self, room: RoomData) -> str:
+        """Format detailed wall information for room."""
+        if not hasattr(room, 'walls') or not room.walls:
+            return ""
+        
+        lines = []
+        lines.append("DETAILED WALL INFORMATION (DETAILLIERTE WANDINFORMATIONEN):")
+        
+        for idx, wall in enumerate(room.walls, 1):
+            material = wall.get('detected_material', 'Unknown')
+            thickness = wall.get('wall_thickness', 0)
+            length = wall.get('wall_length', 0)
+            position = wall.get('position', 'unknown')
+            wall_id = wall.get('wall_id', f'wall_{idx}')
+            
+            # Convert thickness to cm for better readability
+            thickness_cm = thickness * 100
+            
+            lines.append(f"  Wall {idx} ({wall_id}):")
+            lines.append(f"    Material: {material} | Thickness: {thickness_cm:.1f}cm | Length: {length:.2f}m | Position: {position}")
+        
+        return '\n'.join(lines)
+    
     def _create_building_chunk(self, building: BuildingData, project_id: str) -> HierarchicalChunk:
         """Create building-level chunk."""
         floor_ids = list(building.floors.keys())
@@ -327,6 +407,9 @@ Equipment: {equipment_str}"""
         
         if subrooms_str:
             content += f"\nSubrooms: {subrooms_str}"
+        
+        content += f"\n\n{self._format_wall_materials_and_thickness(room)}"
+        content += f"\n{self._format_room_walls_detail(room)}"
         
         return HierarchicalChunk(
             chunk_id=f"room_{project_id}_{room.building_id}_{room.floor_id}_{apt_num}_{room.room_id}",

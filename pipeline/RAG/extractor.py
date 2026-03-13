@@ -94,22 +94,38 @@ class HierarchyExtractor:
         """
         Use LLM to analyze all rooms and extract hierarchy structure.
         Returns structured data about building, floor, apartments, and rooms.
+        Includes wall materials and thickness information.
         """
         all_room_data = []
         for room in rooms:
-            all_room_data.append({
+            # Extract walls data from the room - handle dict format with string keys
+            walls_dict = room.get('walls', {})
+            walls_list = []
+            if isinstance(walls_dict, dict):
+                for wall_id, wall_data in walls_dict.items():
+                    if isinstance(wall_data, dict):
+                        walls_list.append({
+                            'wall_id': wall_id,
+                            'material': wall_data.get('detected_material', 'Unknown'),
+                            'thickness_m': wall_data.get('wall_thickness', 0),
+                            'length_m': wall_data.get('wall_length', 0)
+                        })
+            
+            room_entry = {
                 "room_number": room.get('room_id', 0) + 1,
                 "words": room.get('words', []),
                 "area_sqm": room.get('area_meters_sq', 0),
                 "doors": room.get('doors_count', 0),
-                "windows": room.get('windows_count', 0)
-            })
+                "windows": room.get('windows_count', 0),
+                "walls": walls_list  # Pass extracted walls
+            }
+            all_room_data.append(room_entry)
         
         prompt = f"""Analyze this German floor plan data and extract the hierarchy.
 
 File name: {file_name}
 
-Room data:
+Room data (including walls):
 {json.dumps(all_room_data, indent=2, ensure_ascii=False)}
 
 Extract and return a JSON object with this structure:
@@ -125,10 +141,27 @@ Extract and return a JSON object with this structure:
             "room_type_english": "<English: Room, Bathroom, Kitchen, Hallway, Toilet>",
             "equipment": ["<detected equipment items>"],
             "is_common_area": <true if hallway/staircase/elevator, false otherwise>,
-            "subroom_ids": [<list of additional room IDs if this is a combined/large room, else empty>]
+            "subroom_ids": [<list of additional room IDs if this is a combined/large room, else empty>],
+            "walls": [
+                {{
+                    "wall_id": "<identifier>",
+                    "detected_material": "<material type: e.g., Gipskarton, KS-L, Stahlbeton, Mauerwerk, etc.>",
+                    "wall_thickness": <thickness in meters as float>,
+                    "wall_length": <length in meters as float>,
+                    "position": "<wall position: external/exterior/außen, internal/interior/innen, partition/trennwand>"
+                }}
+            ]
         }}
     ]
 }}
+
+WALL DATA EXTRACTION:
+- Extract wall materials and thicknesses from the 'walls' field in each room
+- detected_material: The construction material (e.g., "Gipskarton", "KS-L", "Stahlbeton", "Mauerwerk")
+- wall_thickness: Thickness value in meters (convert from cm if needed: 10cm = 0.1m)
+- wall_length: Length of wall segment in meters
+- position: Classify wall position (external/outside walls vs internal/partition walls)
+- If wall data exists, extract ALL wall segments for the room
 
 IMPORTANT - Room/Apartment Notation Formats:
 Different floor plans use different notation systems. Be flexible and detect ANY of these patterns:
@@ -172,7 +205,7 @@ Be flexible and extract meaningful hierarchy even if the notation format is unfa
             response = self.client.chat.completions.create(
                 model=LLM_MODEL,
                 messages=[
-                    {"role": "system", "content": "You are an expert in German architectural floor plans. Extract hierarchy information and respond only with valid JSON."},
+                    {"role": "system", "content": "You are an expert in German architectural floor plans. Extract hierarchy information and wall materials. Respond only with valid JSON."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.1,
@@ -319,3 +352,60 @@ Be flexible and extract meaningful hierarchy even if the notation format is unfa
             "floor_number": floor_number,
             "rooms": room_info
         }
+    
+    def _extract_walls(self, room_data: Dict) -> List[Dict]:
+        """Extract wall materials and thickness data from room."""
+        walls = []
+        
+        if 'walls' not in room_data:
+            return walls
+        
+        room_walls = room_data.get('walls', {})
+        for wall_id, wall_info in room_walls.items():
+            wall = {
+                'wall_id': wall_id,
+                'detected_material': wall_info.get('detected_material', 'Unknown'),
+                'wall_thickness': wall_info.get('wall_thickness', 0),
+                'wall_length': wall_info.get('wall_length', 0),
+                'xmin': wall_info.get('xmin'),
+                'ymin': wall_info.get('ymin'),
+                'xmax': wall_info.get('xmax'),
+                'ymax': wall_info.get('ymax')
+            }
+            walls.append(wall)
+        
+        return walls
+    
+    def _extract_wall_materials_summary(self, walls: List[Dict]) -> Dict:
+        """Create summary of wall materials and thickness."""
+        summary = {}
+        
+        for wall in walls:
+            material = wall.get('detected_material', 'Unknown')
+            thickness = wall.get('wall_thickness', 0)
+            length = wall.get('wall_length', 0)
+            
+            if material not in summary:
+                summary[material] = {
+                    'count': 0,
+                    'thicknesses': [],
+                    'total_length': 0,
+                    'min_thickness': thickness,
+                    'max_thickness': thickness
+                }
+            
+            summary[material]['count'] += 1
+            summary[material]['thicknesses'].append(thickness)
+            summary[material]['total_length'] += length
+            summary[material]['min_thickness'] = min(summary[material]['min_thickness'], thickness)
+            summary[material]['max_thickness'] = max(summary[material]['max_thickness'], thickness)
+        
+        # Calculate averages
+        for material in summary:
+            if summary[material]['thicknesses']:
+                summary[material]['avg_thickness'] = (
+                    sum(summary[material]['thicknesses']) / len(summary[material]['thicknesses'])
+                )
+            del summary[material]['thicknesses']
+        
+        return summary

@@ -26,6 +26,7 @@ class RoomData:
     floor_id: str = ""
     building_id: str = ""
     subroom_ids: List[str] = field(default_factory=list)  # IDs of subrooms if this is a combined space
+    walls: List[Dict[str, Any]] = field(default_factory=list)  # Wall material and thickness data
 
 
 @dataclass

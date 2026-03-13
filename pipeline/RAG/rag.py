@@ -221,6 +221,35 @@ Level guidelines:
                 if depth > 1:
                     add_children(child_id, depth - 1)
         
+        # Check for wall/material queries FIRST - highest priority
+        wall_keywords = ['material', 'materialien', 'wandmaterial', 'baumaterial', 'steinart', 
+                        'beton', 'mauerwerk', 'gipskarton', 'stahlbeton', 'ks-l', 'ks-licht',
+                        'dicke', 'stärke', 'thickness', 'wandstärke', 'wanddicke', 'dick', 'stark',
+                        'construction', 'konstruktion', 'aufbau', 'schichtaufbau', 'wandaufbau',
+                        'wand', 'wall', 'mauer', 'außenwand', 'innenwand', 'trennwand', 'brandschutz',
+                        'layer', 'schicht', 'komponenten', 'components']
+        
+        is_wall_query = any(kw in question_lower for kw in wall_keywords)
+        
+        if is_wall_query:
+            # For wall queries, prioritize room chunks (they have wall details)
+            for chunk_id, chunk in self.chunk_graph.items():
+                if chunk.level == 'room':
+                    add_chunk(chunk_id)
+            
+            # Add apartment level for context
+            for chunk_id, chunk in self.chunk_graph.items():
+                if chunk.level == 'apartment':
+                    add_chunk(chunk_id)
+            
+            # Add metadata for construction standard info
+            for chunk_id, chunk in self.chunk_graph.items():
+                if chunk.level == 'metadata':
+                    add_chunk(chunk_id)
+            
+            if chunks:
+                return chunks[:n_results * 3]  # Return more chunks for comprehensive wall info
+        
         def check_stairs_aufzug():
             stairs_keywords = ['trepp', 'stair', 'treppenhaus', 'stufe']
             aufzug_keywords = ['aufzug', 'elevator', 'lift', 'fahrstuhl']
@@ -237,7 +266,7 @@ Level guidelines:
                 return True
             return False
         
-        # Check for stairs/aufzug first
+        # Check for stairs/aufzug 
         if check_stairs_aufzug():
             if chunks:
                 return chunks[:n_results]
