@@ -25,7 +25,7 @@ Key packages:
 - **llama-index**: RAG framework and document processing
 - **openai**: LLM and embedding models
 - **groq**: Groq API for alternative LLM
-- **chromadb/faiss**: Vector store
+- **chromadb/faiss**: Vector storefff
 - **docling**: Advanced PDF parsing
 - **pillow**: Image processing
 - **tesseract/easyocr**: OCR for text extraction
