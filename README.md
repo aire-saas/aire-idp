@@ -1,4 +1,4 @@
-# AIRE-IDP: Intelligent Floor Plan Analysis & RAG System
+# AIRE-IDP
 
 ## 📋 Project Overview
 
@@ -154,6 +154,55 @@ aire-idp/
 ├── .env                              # OpenAI API key
 └── README.md                         # This file
 ```
+
+---
+
+## 🚀 Quick Start Guide
+
+### Step 1: Activate the Environment
+
+```bash
+# Activate the conda environment
+conda activate aire-idp
+```
+
+### Step 2: Configure OpenAI API Key
+
+Create a `.env` file in the project root directory:
+
+**Location**: `c:\Users\Oussama_Jeddou\OneDrive\Bureau\Master\pip\aire-idp\.env`
+
+**Content**:
+```
+OPENAI_API_KEY=your_actual_api_key_here
+```
+
+⚠️ **IMPORTANT:**
+- Replace `your_actual_api_key_here` with your real OpenAI API key
+- Never commit the `.env` file to version control
+- Keep your API key private and secure
+
+### Step 3: Run the Application
+
+```bash
+# From the project root directory
+python pipeline/web_ui.py
+```
+
+The application will automatically:
+- ✅ Load environment variables from `.env` file
+- ✅ Verify OpenAI API key is set
+- ✅ Initialize Flask server on `http://127.0.0.1:5000`
+- ✅ Open your browser automatically
+- ✅ Ready to accept PDF uploads and questions
+
+### Verify Everything Works
+
+1. Open browser to `http://127.0.0.1:5000`
+2. Upload a floor plan PDF
+3. Wait for processing (room detection, wall extraction, etc.)
+4. Ask a question like: "What materials are used in the walls?"
+5. Get intelligent answers powered by RAG + LLM
 
 ---
 
