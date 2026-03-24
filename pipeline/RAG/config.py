@@ -1,5 +1,5 @@
 """
-Configuration settings for the Hierarchical RAG system.
+Configuration settings for the Hierarchical RAG system using Azure OpenAI.
 """
 import os
 from pathlib import Path
@@ -13,13 +13,18 @@ try:
 except ImportError:
     pass  # python-dotenv not installed, use environment variables only
 
-# OpenAI API Configuration
-# Set your API key as an environment variable: OPENAI_API_KEY
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Azure OpenAI API Configuration
+# Set these environment variables in your .env file:
+# AZURE_OPENAI_API_KEY
+# AZURE_OPENAI_ENDPOINT
+# AZURE_OPENAI_API_VERSION
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "https://eastus2aiforhana.openai.azure.com/")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
 
 # Model Configuration
-LLM_MODEL = "gpt-4o"
-EMBEDDING_MODEL = "text-embedding-3-small"
+LLM_DEPLOYMENT_NAME = "gpt-4o"  # Azure deployment name instead of model
+EMBEDDING_DEPLOYMENT_NAME = "text-embedding-3-small"  # Azure deployment name for embeddings
 
 # ChromaDB Configuration
 COLLECTION_NAME = "floor_plans_v2"

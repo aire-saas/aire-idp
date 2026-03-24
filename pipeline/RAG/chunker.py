@@ -1,5 +1,5 @@
 """
-Hierarchical Chunker for creating embeddings.
+Hierarchical Chunker for creating embeddings using Azure OpenAI.
 
 Creates hierarchical chunks for embedding and retrieval.
 Levels: project → metadata → building → floor → apartment/stairs/aufzug → room
@@ -7,9 +7,9 @@ Levels: project → metadata → building → floor → apartment/stairs/aufzug 
 
 from typing import List, Dict
 
-from openai import OpenAI
+from openai import AzureOpenAI
 
-from .config import OPENAI_API_KEY, EMBEDDING_MODEL
+from .config import AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_VERSION, EMBEDDING_DEPLOYMENT_NAME
 from .models import (
     ProjectData, RoomData, StairsData, AufzugData,
     ApartmentData, FloorData, BuildingData, HierarchicalChunk
@@ -18,12 +18,16 @@ from .models import (
 
 class HierarchicalChunker:
     """
-    Creates hierarchical chunks for embedding and retrieval.
+    Creates hierarchical chunks for embedding and retrieval using Azure OpenAI.
     Levels: project → metadata → building → floor → apartment/stairs/aufzug → room
     """
     
     def __init__(self):
-        self.client = OpenAI(api_key=OPENAI_API_KEY)
+        self.client = AzureOpenAI(
+            api_key=AZURE_OPENAI_API_KEY,
+            api_version=AZURE_OPENAI_API_VERSION,
+            azure_endpoint=AZURE_OPENAI_ENDPOINT
+        )
     
     def create_all_chunks(self, project: ProjectData) -> List[HierarchicalChunk]:
         """Create chunks for all levels of the hierarchy."""
@@ -489,7 +493,7 @@ Detection Confidence: {aufzug.confidence:.1%}"""
         for i in range(0, len(contents), batch_size):
             batch = contents[i:i + batch_size]
             response = self.client.embeddings.create(
-                model=EMBEDDING_MODEL,
+                deployment_name=EMBEDDING_DEPLOYMENT_NAME,
                 input=batch
             )
             all_embeddings.extend([e.embedding for e in response.data])

@@ -1,29 +1,34 @@
 """
 Hierarchy Extractor for German floor plan data.
 
-Uses LLM for intelligent extraction with regex fallback.
+Uses Azure OpenAI LLM for intelligent extraction with regex fallback.
 """
 
 import re
 import json
+import os
 from typing import List, Dict, Any
 
-from openai import OpenAI
+from openai import AzureOpenAI
 
-from .config import OPENAI_API_KEY, LLM_MODEL
+from .config import AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_VERSION, LLM_DEPLOYMENT_NAME
 from .models import ProjectData, ProjectMetadata
 
 
 class HierarchyExtractor:
     """
     Extracts hierarchy information from floor plan JSON.
-    Uses LLM for intelligent extraction with regex fallback.
+    Uses Azure OpenAI LLM for intelligent extraction with regex fallback.
     """
     
     def __init__(self, use_llm: bool = True):
         self.use_llm = use_llm
         if use_llm:
-            self.client = OpenAI(api_key=OPENAI_API_KEY)
+            self.client = AzureOpenAI(
+                api_key=AZURE_OPENAI_API_KEY,
+                api_version=AZURE_OPENAI_API_VERSION,
+                azure_endpoint=AZURE_OPENAI_ENDPOINT
+            )
         else:
             self.client = None
     
@@ -92,7 +97,7 @@ class HierarchyExtractor:
     
     def extract_hierarchy(self, rooms: List[Dict], file_name: str) -> Dict[str, Any]:
         """
-        Use LLM to analyze all rooms and extract hierarchy structure.
+        Use Azure OpenAI LLM to analyze all rooms and extract hierarchy structure.
         Returns structured data about building, floor, apartments, and rooms.
         Includes wall materials and thickness information.
         """
@@ -203,7 +208,7 @@ Be flexible and extract meaningful hierarchy even if the notation format is unfa
 
         try:
             response = self.client.chat.completions.create(
-                model=LLM_MODEL,
+                model=LLM_DEPLOYMENT_NAME,
                 messages=[
                     {"role": "system", "content": "You are an expert in German architectural floor plans. Extract hierarchy information and wall materials. Respond only with valid JSON."},
                     {"role": "user", "content": prompt}
@@ -214,7 +219,7 @@ Be flexible and extract meaningful hierarchy even if the notation format is unfa
             
             return json.loads(response.choices[0].message.content)
         except Exception as e:
-            print(f"LLM extraction failed: {e}")
+            print(f"Azure OpenAI LLM extraction failed: {e}")
             return self._fallback_extraction(rooms, file_name)
     
     def _fallback_extraction(self, rooms: List[Dict], file_name: str) -> Dict[str, Any]:

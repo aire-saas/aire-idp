@@ -1,7 +1,7 @@
 """
-OpenAI Vision API Image Text Extractor
+Azure OpenAI Vision API Image Text Extractor
 
-Uses OpenAI's Vision API to extract and structure text from images into JSON format.
+Uses Azure OpenAI's Vision API to extract and structure text from images into JSON format.
 All information from the image is preserved, and no external information is added.
 """
 
@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from typing import Dict, Any, Optional
 from datetime import datetime
-from openai import OpenAI
+from openai import AzureOpenAI
 from PIL.Image import Image as PILImage
 import io
 import base64
@@ -27,28 +27,39 @@ logger = logging.getLogger(__name__)
 
 
 class InfoGroupExtractor:
-    """Extract and structure text from images using OpenAI Vision API."""
+    """Extract and structure text from images using Azure OpenAI Vision API."""
     
-    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-4o", pdfProcessor: PDFProcessor | None = None):
+    def __init__(self, api_key: Optional[str] = None, deployment_name: str = "gpt-4o", pdfProcessor: PDFProcessor | None = None):
         """
-        Initialize the OpenAI Image Extractor.
+        Initialize the Azure OpenAI Image Extractor.
         
         Args:
-            api_key: OpenAI API key. If None, will try to get from OPENAI_API_KEY env var.
-            model: OpenAI model to use. Default is "gpt-4o" (supports vision).
+            api_key: Azure OpenAI API key. If None, will try to get from AZURE_OPENAI_API_KEY env var.
+            deployment_name: Azure OpenAI deployment name. Default is "gpt-4o".
+            pdfProcessor: PDF processor instance for processing pages.
         """
-        # Try to get API key from parameter, environment variable, or use default
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
-        print("openAI key " + str(self.api_key))
-        if not self.api_key:
+        # Get Azure OpenAI credentials from environment or parameters
+        self.api_key = api_key or os.getenv("AZURE_OPENAI_API_KEY")
+        self.endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        self.api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-15-preview")
+        
+        print("Azure OpenAI key: " + str(bool(self.api_key)))
+        print("Azure OpenAI endpoint: " + str(self.endpoint))
+        print("Azure OpenAI API version: " + str(self.api_version))
+        
+        if not self.api_key or not self.endpoint:
             raise ValueError(
-                "OpenAI API key not provided. "
-                "Set OPENAI_API_KEY environment variable or pass api_key parameter."
+                "Azure OpenAI credentials not found. "
+                "Set AZURE_OPENAI_API_KEY and AZURE_OPENAI_ENDPOINT environment variables."
             )
         
-        self.client = OpenAI(api_key=self.api_key)
-        self.model = model
-        logger.info(f"Initialized OpenAI Image Extractor with model: {model}")
+        self.client = AzureOpenAI(
+            api_key=self.api_key,
+            api_version=self.api_version,
+            azure_endpoint=self.endpoint
+        )
+        self.deployment_name = deployment_name
+        logger.info(f"Initialized Azure OpenAI Image Extractor with deployment: {deployment_name}")
 
         self.pdfProcessor = pdfProcessor
     
@@ -87,7 +98,7 @@ class InfoGroupExtractor:
     
     def extract_and_structure2(self, image: PILImage) -> Dict[str, Any]:
         """
-        Extract text from a PIL image and structure it into JSON using OpenAI Vision API.
+        Extract text from a PIL image and structure it into JSON using Azure OpenAI Vision API.
 
         Args:
             image: PIL Image object
@@ -114,9 +125,9 @@ class InfoGroupExtractor:
         prompt = self._build_extraction_prompt()
 
         try:
-            # Call OpenAI Vision API
+            # Call Azure OpenAI Vision API
             response = self.client.chat.completions.create(
-                model=self.model,
+                model=self.deployment_name,
                 messages=[
                     {
                         "role": "user",
@@ -167,7 +178,7 @@ class InfoGroupExtractor:
     
     def extract_and_structure(self, image_path: str) -> Dict[str, Any]:
         """
-        Extract text from image and structure it into JSON using OpenAI Vision API.
+        Extract text from image and structure it into JSON using Azure OpenAI Vision API.
         
         Args:
             image_path: Path to the image file
@@ -188,9 +199,9 @@ class InfoGroupExtractor:
         prompt = self._build_extraction_prompt()
         
         try:
-            # Call OpenAI Vision API
+            # Call Azure OpenAI Vision API
             response = self.client.chat.completions.create(
-                model=self.model,
+                model=self.deployment_name,
                 messages=[
                     {
                         "role": "user",
@@ -241,7 +252,7 @@ class InfoGroupExtractor:
     
     def _build_extraction_prompt(self) -> str:
         """
-        Build the prompt for OpenAI Vision API.
+        Build the prompt for Azure OpenAI Vision API.
         
         Returns:
             Prompt string with instructions for extraction
@@ -329,15 +340,14 @@ Remember:
     
     def _parse_json_response(self, response_text: str) -> Dict[str, Any]:
         """
-        Parse JSON from OpenAI response.
+        Parse JSON from Azure OpenAI response.
         
         Args:
-            response_text: Raw response text from OpenAI
+            response_text: Raw response text from Azure OpenAI
             
         Returns:
             Parsed JSON dictionary
         """
-        # Remove markdown code blocks if present
         response_text = response_text.strip()
         
         # Try to find JSON in the response
@@ -376,7 +386,6 @@ Remember:
         Returns:
             Project name if found, None otherwise
         """
-        # Common German field names for project name
         project_fields = [
             "projekt_name", "projektname", "projekt", "projekt_nr", "projektnummer",
             "projektbezeichnung", "projekt_bezeichnung", "projektbezeichnung",
@@ -444,14 +453,12 @@ Remember:
         Returns:
             Plan number if found, None otherwise
         """
-        # Priority 1: Explicit plan number fields (most specific)
         plan_number_fields = [
             "plan_nr", "plan-nr", "plan_nummer", "plan-nummer",
             "plan_nr.", "plan_nummer.", "plan_number", "plan_no",
             "plannummer", "plannr", "nummer", "nr"
         ]
         
-        # Priority 2: Plan info section fields
         plan_info_fields = [
             "werkplanung", "planinfo", "plan_info", "plan", "zeichnung"
         ]
@@ -606,25 +613,25 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(
-        description='Extract and structure text from images using OpenAI Vision API'
+        description='Extract and structure text from images using Azure OpenAI Vision API'
     )
     parser.add_argument('image_path', help='Path to the image file')
     parser.add_argument('-o', '--output', help='Output JSON file path (optional)')
     parser.add_argument(
         '--api-key',
-        help='OpenAI API key (or set OPENAI_API_KEY env var)',
+        help='Azure OpenAI API key (or set AZURE_OPENAI_API_KEY env var)',
         default=None
     )
     parser.add_argument(
-        '--model',
-        help='OpenAI model to use (default: gpt-4o)',
+        '--deployment',
+        help='Azure OpenAI deployment name (default: gpt-4o)',
         default='gpt-4o'
     )
     
     args = parser.parse_args()
     
     # Initialize extractor
-    extractor = InfoGroupExtractor(api_key=args.api_key, model=args.model)
+    extractor = InfoGroupExtractor(api_key=args.api_key, deployment_name=args.deployment)
     
     # Extract and structure
     result = extractor.extract_and_structure(args.image_path)

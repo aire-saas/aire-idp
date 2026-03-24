@@ -1,8 +1,3 @@
-"""
-Web-based PDF Chat UI using Flask with Hybrid Semantic Search + Groq LLM
-Local semantic retrieval + Groq-hosted LLM for reasoning
-"""
-
 import os
 import json
 import io
@@ -15,12 +10,32 @@ from datetime import datetime, timedelta
 
 from flask import Flask, render_template, request, jsonify, send_file, session
 from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
 
 from pipeline import ArchitecturalPlanPipeline
 
 from groq import Groq
 
-# -------------------- CONFIG --------------------
+# -------------------- LOAD ENVIRONMENT --------------------
+# Load environment variables from .env file
+load_dotenv()
+
+# Verify Azure OpenAI API credentials are set
+azure_api_key = os.getenv('AZURE_OPENAI_API_KEY')
+azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
+azure_api_version = os.getenv('AZURE_OPENAI_API_VERSION')
+
+if not azure_api_key or not azure_endpoint or not azure_api_version:
+    raise ValueError(
+        "❌ ERROR: Azure OpenAI credentials not found!\n"
+        "Please create a .env file in the project root with:\n"
+        "  AZURE_OPENAI_API_KEY=your_api_key_here\n"
+        "  AZURE_OPENAI_ENDPOINT=your_endpoint_here\n"
+        "  AZURE_OPENAI_API_VERSION=2024-02-15-preview\n"
+        "See the top of this file for detailed setup instructions."
+    )
+
+# -------------------- CONFIG ----------------------
 UPLOAD_FOLDER = "./uploads"
 ALLOWED_EXTENSIONS = {"pdf"}
 SESSION_TTL_MINUTES = 30

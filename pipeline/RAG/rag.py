@@ -8,11 +8,11 @@ import json
 from pathlib import Path
 from typing import Dict, Any, List
 
-from openai import OpenAI
+from openai import AzureOpenAI
 import chromadb
 from chromadb.config import Settings
 
-from .config import OPENAI_API_KEY, LLM_MODEL, EMBEDDING_MODEL, COLLECTION_NAME, DEFAULT_PERSIST_DIR
+from .config import AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_VERSION, LLM_DEPLOYMENT_NAME, EMBEDDING_DEPLOYMENT_NAME, COLLECTION_NAME, DEFAULT_PERSIST_DIR
 from .models import ProjectData, HierarchicalChunk
 from .processor import HierarchicalProcessor
 from .chunker import HierarchicalChunker
@@ -39,7 +39,11 @@ class HierarchicalRAG:
             use_llm: Whether to use LLM for hierarchy extraction.
                     Set to False to use only regex fallback (faster, no API cost).
         """
-        self.client = OpenAI(api_key=OPENAI_API_KEY)
+        self.client = AzureOpenAI(
+            api_key=AZURE_OPENAI_API_KEY,
+            api_version=AZURE_OPENAI_API_VERSION,
+            azure_endpoint=AZURE_OPENAI_ENDPOINT
+        )
         self.use_llm = use_llm
         
         if persist_dir is None:
@@ -175,7 +179,7 @@ Level guidelines:
 
         try:
             response = self.client.chat.completions.create(
-                model=LLM_MODEL,
+                model=LLM_DEPLOYMENT_NAME,
                 messages=[
                     {"role": "system", "content": "Analyze questions about German architectural floor plans. Return only valid JSON."},
                     {"role": "user", "content": prompt}
@@ -298,7 +302,7 @@ Level guidelines:
         
         if needs_building:
             for chunk_id, chunk in self.chunk_graph.items():
-                if chunk.level == 'building':
+                if chunk.level == "building":
                     add_chunk(chunk_id)
             # Return early only if purely about building structure (not space/area/apartments/walls/doors)
             needs_more_context = ['apartment', 'wohnung', 'room', 'zimmer', 'space', 'area', 
@@ -318,7 +322,7 @@ Level guidelines:
         
         if needs_metadata:
             for chunk_id, chunk in self.chunk_graph.items():
-                if chunk.level == 'metadata':
+                if chunk.level == "metadata":
                     add_chunk(chunk_id)
             # If ONLY asking about metadata (not combined with building), return early
             if (target_level == "metadata" or analysis.get("query_type") == "metadata_lookup") and not needs_building:
@@ -392,7 +396,7 @@ Level guidelines:
         if not chunks:
             # Generate embedding using OpenAI (same model as stored embeddings)
             embedding_response = self.client.embeddings.create(
-                model=EMBEDDING_MODEL,
+                model=EMBEDDING_DEPLOYMENT_NAME,
                 input=[question]
             )
             query_embedding = embedding_response.data[0].embedding
@@ -480,7 +484,7 @@ For measurements, use metric units (sqm, meters).
 Be precise with numbers and apartment/room identifications."""
         
         response = self.client.chat.completions.create(
-            model=LLM_MODEL,
+            model=LLM_DEPLOYMENT_NAME,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"}
